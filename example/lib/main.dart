@@ -10,6 +10,7 @@ import 'package:papilus_component_gramedia_example/Core/RadiusView.dart';
 import 'package:papilus_component_gramedia_example/Core/SegmentecControllerView.dart';
 import 'package:papilus_component_gramedia_example/Core/SpacingView.dart';
 import 'package:papilus_component_gramedia_example/Core/TypographyView.dart';
+import 'package:papilus_component_gramedia_example/Core/WrapChipsView.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,7 +48,7 @@ class TestingView extends StatefulWidget {
   State<TestingView> createState() => _TestingViewState();
 }
 
-enum TestingViewCase { color, typograpy, radius, spacing, showBottomsheet, segmentedControl }
+enum TestingViewCase { color, typograpy, radius, spacing, showBottomsheet, segmentedControl, chips }
 
 class _TestingViewState extends State<TestingView> with Alert {
   void navigation(TestingViewCase caseValue) {
@@ -69,6 +70,9 @@ class _TestingViewState extends State<TestingView> with Alert {
       case TestingViewCase.segmentedControl:
         Navigator.push(
             context, MaterialPageRoute(builder: (_) => SegmentedControllerView()));
+      case TestingViewCase.chips:
+         Navigator.push(
+            context, MaterialPageRoute(builder: (_) => WrapChipsView()));
     }
   }
 

@@ -10,3 +10,5 @@ export 'package:papilus_component_gramedia/Core/Spacing/Spacing.dart';
 export 'package:papilus_component_gramedia/Bottomsheet/Bottomsheets.dart';
 export 'package:papilus_component_gramedia/Text/GramediaText.dart';
 export 'package:papilus_component_gramedia/SegmentedControlled/SegmentedControlled.dart';
+export 'package:papilus_component_gramedia/SegmentedControlled/SegmentedWidget.dart';
+export 'package:papilus_component_gramedia/Chips/GramediaChips.dart';
