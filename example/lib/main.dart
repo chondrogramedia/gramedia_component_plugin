@@ -5,10 +5,16 @@ import 'package:papilus_component_gramedia/Bottomsheet/Bottomsheets.dart';
 import 'package:flutter/services.dart';
 import 'package:papilus_component_gramedia/Core/Color/Color.dart';
 import 'package:papilus_component_gramedia/Core/Typography/Typography.dart';
+import 'package:papilus_component_gramedia/Text/GramediaText.dart';
+import 'package:papilus_component_gramedia_example/Core/BottomSheetView.dart';
 import 'package:papilus_component_gramedia_example/Core/ColorView.dart';
+import 'package:papilus_component_gramedia_example/Core/ElevationView.dart';
+import 'package:papilus_component_gramedia_example/Core/LoadingIndicatorView.dart';
+import 'package:papilus_component_gramedia_example/Core/PLPCardView.dart';
 import 'package:papilus_component_gramedia_example/Core/RadiusView.dart';
 import 'package:papilus_component_gramedia_example/Core/SegmentecControllerView.dart';
 import 'package:papilus_component_gramedia_example/Core/SpacingView.dart';
+import 'package:papilus_component_gramedia_example/Core/TextFieldView.dart';
 import 'package:papilus_component_gramedia_example/Core/TypographyView.dart';
 import 'package:papilus_component_gramedia_example/Core/WrapChipsView.dart';
 
@@ -48,7 +54,19 @@ class TestingView extends StatefulWidget {
   State<TestingView> createState() => _TestingViewState();
 }
 
-enum TestingViewCase { color, typograpy, radius, spacing, showBottomsheet, segmentedControl, chips }
+enum TestingViewCase {
+  color,
+  typograpy,
+  radius,
+  spacing,
+  showBottomsheet,
+  segmentedControl,
+  chips,
+  textfield,
+  elevation,
+  loadingIndicator,
+  plpcard
+}
 
 class _TestingViewState extends State<TestingView> with Alert {
   void navigation(TestingViewCase caseValue) {
@@ -65,14 +83,26 @@ class _TestingViewState extends State<TestingView> with Alert {
         Navigator.push(
             context, MaterialPageRoute(builder: (_) => SpacingView()));
       case TestingViewCase.showBottomsheet:
-        showModalBottomSheetGramedia(context,
-            title: Text("Error"), content: Image.asset("assets/Image.png",width: 200,height: 200,));
+         Navigator.push(context,
+            MaterialPageRoute(builder: (_) => BottomSheetView()));
       case TestingViewCase.segmentedControl:
-        Navigator.push(
-            context, MaterialPageRoute(builder: (_) => SegmentedControllerView()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (_) => SegmentedControllerView()));
       case TestingViewCase.chips:
-         Navigator.push(
+        Navigator.push(
             context, MaterialPageRoute(builder: (_) => WrapChipsView()));
+      case TestingViewCase.textfield:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (_) => TextFieldView()));
+      case TestingViewCase.elevation:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (_) => ElevationView()));
+      case TestingViewCase.loadingIndicator:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (_) => LoadingIndicatorView()));
+      case TestingViewCase.plpcard:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (_) => PLPCardView()));
     }
   }
 
@@ -91,7 +121,7 @@ class _TestingViewState extends State<TestingView> with Alert {
                     onPressed: () {
                       navigation(TestingViewCase.values[index]);
                     },
-                    child: Text(TestingViewCase.values[index].name))),
+                    child: GramediaText(TestingViewCase.values[index].name, fontStyle: UrbanistFont.mobile_text_l_extrabold,color: Colors.white,))),
           ),
         ));
   }

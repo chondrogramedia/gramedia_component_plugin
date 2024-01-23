@@ -17,6 +17,7 @@ enum UrbanistFont {
   mobile_text_l_medium,
   mobile_text_l_semibold_underline,
   mobile_text_m_extrabold,
+  mobile_text_m_medium,
   mobile_text_m_semibold_underline,
   mobile_text_s_extrabold,
   mobile_text_s_medium,
@@ -142,6 +143,10 @@ class TypographyHelper {
                 isUndlerlined ? TextDecoration.underline : TextDecoration.none,color: color);
       case UrbanistFont.mobile_text_2xs_semibold_underline:
       return GoogleFonts.urbanist(fontWeight: semibold, fontSize: 10,
+            decoration:
+                isUndlerlined ? TextDecoration.underline : TextDecoration.none,color: color);
+      case UrbanistFont.mobile_text_m_medium:
+       return GoogleFonts.urbanist(fontWeight: medium, fontSize: 16,
             decoration:
                 isUndlerlined ? TextDecoration.underline : TextDecoration.none,color: color);
     }
