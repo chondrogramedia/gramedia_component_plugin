@@ -17,7 +17,7 @@ Gramedia Base Component UI for Flutter.
 ## Gramedia Tabbar
 <img src="https://github.com/chondrogramedia/gramedia_component_plugin/blob/main/documentation/tabbar_unscrolled.gif" width="256">
 
-```
+```dart
 GramediaTabBar(
                       indicator: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
