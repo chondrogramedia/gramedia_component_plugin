@@ -14,3 +14,5 @@ Gramedia Base Component UI for Flutter.
       url: https://github.com/chondrogramedia/gramedia_component_plugin.git
       ref: main # branch name
 ```
+Gramedia Tabbar
+![](https://github.com/chondrogramedia/gramedia_component_plugin/blob/main/documentation/tabbar_unscrolled.gif)
