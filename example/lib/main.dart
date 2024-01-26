@@ -9,14 +9,18 @@ import 'package:papilus_component_gramedia/Text/GramediaText.dart';
 import 'package:papilus_component_gramedia_example/Core/BottomSheetView.dart';
 import 'package:papilus_component_gramedia_example/Core/ColorView.dart';
 import 'package:papilus_component_gramedia_example/Core/ElevationView.dart';
+import 'package:papilus_component_gramedia_example/Core/ListButtonView.dart';
 import 'package:papilus_component_gramedia_example/Core/LoadingIndicatorView.dart';
 import 'package:papilus_component_gramedia_example/Core/PLPCardView.dart';
 import 'package:papilus_component_gramedia_example/Core/RadiusView.dart';
 import 'package:papilus_component_gramedia_example/Core/SegmentecControllerView.dart';
 import 'package:papilus_component_gramedia_example/Core/SpacingView.dart';
+import 'package:papilus_component_gramedia_example/Core/TabBarExampleView.dart';
 import 'package:papilus_component_gramedia_example/Core/TextFieldView.dart';
 import 'package:papilus_component_gramedia_example/Core/TypographyView.dart';
 import 'package:papilus_component_gramedia_example/Core/WrapChipsView.dart';
+import 'package:papilus_component_gramedia_example/Custom/SegemntedCustomView.dart';
+import 'package:papilus_component_gramedia_example/View/TabBarCustomView.dart';
 
 void main() {
   runApp(const MyApp());
@@ -65,7 +69,9 @@ enum TestingViewCase {
   textfield,
   elevation,
   loadingIndicator,
-  plpcard
+  plpcard,
+  tabBarView,
+  button
 }
 
 class _TestingViewState extends State<TestingView> with Alert {
@@ -87,7 +93,7 @@ class _TestingViewState extends State<TestingView> with Alert {
             MaterialPageRoute(builder: (_) => BottomSheetView()));
       case TestingViewCase.segmentedControl:
         Navigator.push(context,
-            MaterialPageRoute(builder: (_) => SegmentedControllerView()));
+            MaterialPageRoute(builder: (_) => SegmentedCustomView()));
       case TestingViewCase.chips:
         Navigator.push(
             context, MaterialPageRoute(builder: (_) => WrapChipsView()));
@@ -103,6 +109,12 @@ class _TestingViewState extends State<TestingView> with Alert {
       case TestingViewCase.plpcard:
         Navigator.push(
             context, MaterialPageRoute(builder: (_) => PLPCardView()));
+      case TestingViewCase.tabBarView:
+         Navigator.push(
+            context, MaterialPageRoute(builder: (_) => TabBarExampleView()));
+      case TestingViewCase.button:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (_) => ListButtonView()));
     }
   }
 

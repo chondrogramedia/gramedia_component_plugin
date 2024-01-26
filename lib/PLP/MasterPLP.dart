@@ -9,13 +9,15 @@ class MasterPLPCard extends StatelessWidget {
   String author;
   String title;
   Widget? content;
-  MasterPLPCard({super.key, required this.imageUrl, required this.author,required this.title, this.content});
+  BoxDecoration? decoration;
+  MasterPLPCard({super.key, required this.imageUrl, required this.author,required this.title, this.content, this.decoration});
 
   @override
   Widget build(BuildContext context) {
     final spacing = SpacingHelper();
     final color = ColorHelper();
     return Container(
+      decoration: decoration,
       padding: EdgeInsets.all(spacing.getvalue(Spacing.spacing_4)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

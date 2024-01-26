@@ -117,6 +117,7 @@ class _GramediaSegmentedWidgetState<T> extends State<GramediaSegmentedWidget<T>>
   bool hasTouch = false;
   double? maxSize;
   List<AdjustSize<T>> cacheItems = [];
+  double differentOffset = 0.0;
 
   @override
   void initState() {
@@ -230,11 +231,12 @@ class _GramediaSegmentedWidgetState<T> extends State<GramediaSegmentedWidget<T>>
       items: _keys,
       sizes: sizes.values.toList(),
     );
+    differentOffset = _offset - offset;
     setState(() => offset = _offset);
     final _value = _keys[_keys.indexOf(current)]!;
     widget.onValueChanged(_value);
     if (widget.onOffsetScroll != null){
-       widget.onOffsetScroll!(_value,offset);
+       widget.onOffsetScroll!(_value,differentOffset);
     }
     widget.controller?.value = current;
   }

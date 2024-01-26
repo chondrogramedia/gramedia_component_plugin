@@ -15,7 +15,11 @@ class _LoadingIndicatorViewState extends State<LoadingIndicatorView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: GramediaText("Loading Indicator", fontStyle: UrbanistFont.mobile_text_l_extrabold,color: Colors.white,),
+        title: GramediaText(
+          "Loading Indicator",
+          fontStyle: UrbanistFont.mobile_text_l_extrabold,
+          color: Colors.white,
+        ),
       ),
       backgroundColor: Colors.black,
       body: Center(

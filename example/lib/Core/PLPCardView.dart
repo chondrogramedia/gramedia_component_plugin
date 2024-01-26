@@ -15,16 +15,24 @@ class _PLPCardViewState extends State<PLPCardView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: GramediaText("PLP Master", fontStyle: UrbanistFont.mobile_text_l_extrabold,color: Colors.white,),
+        title: GramediaText(
+          "PLP Master",
+          fontStyle: UrbanistFont.mobile_text_l_extrabold,
+          color: Colors.white,
+        ),
       ),
-      body: GridView.extent(
-        maxCrossAxisExtent: 156,
-        childAspectRatio: 0.5,
-        children: List.generate(6, (index) => MasterPLPCard(
-              imageUrl:
-                  "https://elexmedia.s3.amazonaws.com/product/9789792039504.jpg",
-              author: "Echiro Oda",
-              title: "One Piece")),
+      body: SingleChildScrollView(
+        child: Wrap(
+          children: List.generate(
+              6,
+              (index) => MasterPLPCard(
+                    imageUrl:
+                        "https://elexmedia.s3.amazonaws.com/product/9789792039504.jpg",
+                    author: "Echiro Oda",
+                    title: "One Piece",
+                    
+                  )),
+        ),
       ),
     );
   }

@@ -25,6 +25,7 @@ class _TextFieldViewState extends State<TextFieldView> {
           child: Column(
             children: [
               GramediaTextField(
+                prefix: GramediaText("Rp", fontStyle: UrbanistFont.desktop_text_2xl_extrabold),
                 labelText: "Chondro",
                 inputFormatters: [
                   FilteringTextInputFormatter.allow(RegExp("[0-9@a-zA-Z.]"))

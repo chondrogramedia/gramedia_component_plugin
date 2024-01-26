@@ -15,7 +15,10 @@ mixin Alert {
   }
 
   void showModalBottomSheetGramedia(BuildContext context,
-      {required Widget title, required Widget content}) {
+      {required String header,
+      required Widget content,
+      required String title,
+      required String message,required List<Widget> actions}) {
     var radiusHelper = RadiusHelper();
     var mediaQuery = MediaQuery.of(context);
     showModalBottomSheet<void>(
@@ -35,23 +38,24 @@ mixin Alert {
             child: Column(
               children: [
                 HeaderBottomSheet(
-                  title: "Heading",
+                  title: header,
                   onTapClose: () {
                     Navigator.pop(context);
                   },
                 ),
                 MasterContentBottomSheet(
                     image: content,
-                    title: "Error Login",
-                    description: "Please check your email and password"),
-                MasterBottomSheet()
+                    title: title,
+                    description: message),
+                MasterBottomSheet(children: actions,)
               ],
             ),
           );
         });
   }
 
-  void showGramediaAlert(BuildContext context, {required String title,required String message}) {
+  void showGramediaAlert(BuildContext context,
+      {required String title, required String message}) {
     var scaffold = ScaffoldMessenger.of(context);
     final banner = MaterialBanner(
         surfaceTintColor: Colors.blue,
@@ -77,18 +81,23 @@ mixin Alert {
     scaffold.showMaterialBanner(banner);
   }
 
-  void showGramediaSnackbar(BuildContext context, {required String message,SnackBarAction? action}) {
+  void showGramediaSnackbar(BuildContext context,
+      {required String message, SnackBarAction? action}) {
     var color = ColorHelper();
     final snackBar = SnackBar(
-      backgroundColor: color.getColor(GramediaColor.neutral600),
-      content: GramediaText(
-        message,
-        fontStyle: UrbanistFont.mobile_text_s_medium,
-        textAlign: TextAlign.start,
-        color: Colors.white,
-      ),
-      action: action
-    );
+        behavior: SnackBarBehavior.floating,
+        dismissDirection: DismissDirection.up,
+        duration: Duration(seconds: 3),
+        elevation: 0,
+        margin: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+        backgroundColor: color.getColor(GramediaColor.neutral600),
+        content: GramediaText(
+          message,
+          fontStyle: UrbanistFont.mobile_text_s_medium,
+          textAlign: TextAlign.start,
+          color: Colors.white,
+        ),
+        action: action);
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

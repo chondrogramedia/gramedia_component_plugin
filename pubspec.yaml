@@ -13,6 +13,7 @@ dependencies:
   plugin_platform_interface: ^2.0.2
   google_fonts: ^6.1.0
   date_picker_plus: ^2.1.0
+  fluentui_system_icons: ^1.1.224
 
 dev_dependencies:
   flutter_test:

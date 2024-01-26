@@ -40,6 +40,43 @@ class _SegmentedControllerViewState extends State<SegmentedControllerView> {
     var colorHelper = ColorHelper();
     var radiusHelper = RadiusHelper();
     var size = MediaQuery.of(context).size;
+
+    // double offsetValue(double offset,{required int currentIndex, required int index,required List<Widget> children}){
+    //   if (currentIndex > index){
+
+    //   } else if (index == 0){
+
+    //   } else if (index == children.length - 1){
+
+    //   } else {
+    //     return 0.0;
+    //   } 
+    // }
+    List<Widget> childValue = [
+       Text("Chondro"),
+                        Row(
+                          children: [Icon(Icons.abc), Text("Chondro Ganteng")],
+                        ),
+                        Text("Chondro"),
+                         Row(
+                          children: [Icon(Icons.abc), Text("Chondro Ganteng")],
+                        ),
+                         Row(
+                          children: [Icon(Icons.abc), Text("Chondro Ganteng")],
+                        )
+    ];
+    Map<int,Widget> setChildren (List<Widget> children){
+      var index = 0;
+      Map<int,Widget> values = {};
+      while (index < children.length){
+        values.addAll({
+          index : children[index]
+        });
+        index += 1;
+      }
+      return values;
+    }
+
     return Scaffold(
       appBar: AppBar(),
       body: Container(
@@ -47,75 +84,64 @@ class _SegmentedControllerViewState extends State<SegmentedControllerView> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // SizedBox(
-            //   height: 40,
-            //   child: ListView(
-            //     physics: AlwaysScrollableScrollPhysics(),
-            //     controller: scrollController,
-            //     scrollDirection: Axis.horizontal,
-            //     children: [
-            //       GramediaSegmentedWidget<int>(
-            //           customSegmentSettings:
-            //               SegmentedSettings(highlightColor: Colors.blue),
-            //           curve: Curves.easeIn,
-            //           initialValue: currentIndex,
-            //           children: {
-            //             0: Text("Chondro"),
-            //             1: Row(
-            //               children: [Icon(Icons.abc), Text("Chondro Ganteng")],
-            //             ),
-            //             2: Text("Chondro"),
-            //             3: Row(
-            //               children: [Icon(Icons.abc), Text("Chondro Ganteng")],
-            //             ),
-            //             4: Row(
-            //               children: [Icon(Icons.abc), Text("Chondro Ganteng")],
-            //             )
-            //           },
-            //           onValueChanged: (value) {
-            //             // setState(() {
-            //             //   currentIndex = value;
-            //             // });
-            //             //scrollController.jumpTo(value)
-            //           }, onOffsetScroll: (index, value) {
-            //             var width = size.width;
-
-            //             setState(() {
-            //               currentIndex = index;
-            //             });
-            //           },)
-            //     ],
-            //   ),
-            // ),
-            GramediaSegmentedWidget<int>(
-              thumbDecoration: BoxDecoration(
-                color: Colors.blue,
-                  borderRadius: BorderRadius.circular(12)
+            SizedBox(
+              height: 40,
+              child: ListView(
+                physics: AlwaysScrollableScrollPhysics(),
+                controller: scrollController,
+                scrollDirection: Axis.horizontal,
+                children: [
+                  GramediaSegmentedWidget<int>(
+                      customSegmentSettings:
+                          SegmentedSettings(highlightColor: Colors.blue),
+                      curve: Curves.easeIn,
+                      initialValue: currentIndex,
+                      children: setChildren(childValue),
+                      onValueChanged: (value) {
+                        // setState(() {
+                        //   currentIndex = value;
+                        // });
+                        
+                      }, onOffsetScroll: (index, value) {
+                        var width = size.width;
+                       
+                        
+                        setState(() {
+                          currentIndex = index;
+                        });
+                      },)
+                ],
               ),
-              isStretch: true,
-              customSegmentSettings: SegmentedSettings(
-                  highlightColor: Colors.blue,
-                  borderRadius: BorderRadius.circular(12)),
-              curve: Curves.easeIn,
-              initialValue: currentIndex,
-              decoration: BoxDecoration(
-                  color: Colors.grey, borderRadius: BorderRadius.circular(12)),
-              children: {
-                0: Text("Chondro"),
-                1: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [Icon(Icons.abc), Text("Chondro Ganteng")],
-                ),
-              },
-              onValueChanged: (value) {
-                //scrollController.jumpTo(value)
-              },
-              onOffsetScroll: (index, value) {
-                setState(() {
-                  currentIndex = index;
-                });
-              },
-            )
+            ),
+            // GramediaSegmentedWidget<int>(
+            //   thumbDecoration: BoxDecoration(
+            //     color: Colors.blue,
+            //       borderRadius: BorderRadius.circular(12)
+            //   ),
+            //   isStretch: true,
+            //   customSegmentSettings: SegmentedSettings(
+            //       highlightColor: Colors.blue,
+            //       borderRadius: BorderRadius.circular(12)),
+            //   curve: Curves.easeIn,
+            //   initialValue: currentIndex,
+            //   decoration: BoxDecoration(
+            //       color: Colors.grey, borderRadius: BorderRadius.circular(12)),
+            //   children: {
+            //     0: Text("Chondro"),
+            //     1: Row(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [Icon(Icons.abc), Text("Chondro Ganteng")],
+            //     ),
+            //   },
+            //   onValueChanged: (value) {
+            //     //scrollController.jumpTo(value)
+            //   },
+            //   onOffsetScroll: (index, value) {
+            //     setState(() {
+            //       currentIndex = index;
+            //     });
+            //   },
+            // )
 
             // Container(
             //   height: 48,

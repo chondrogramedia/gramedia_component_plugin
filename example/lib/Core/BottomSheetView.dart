@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:papilus_component_gramedia/GramediaComponent.dart';
 
-
 class BottomSheetView extends StatefulWidget {
   const BottomSheetView({super.key});
 
@@ -22,30 +21,37 @@ class _BottomSheetViewState extends State<BottomSheetView> with Alert {
             ElevatedButton(
               onPressed: () {
                 showModalBottomSheetGramedia(context,
-                title: Text("Error"),
-                content: Image.asset(
-                  "assets/Image.png",
-                  width: 200,
-                  height: 200,
-                ));
+                header: "Error",
+                    title: "Failed Login",
+                    message: "Please check your email / password",
+                    content: Image.asset(
+                      "assets/Image.png",
+                      width: 200,
+                      height: 200,
+                    ),actions: []);
               },
               child: GramediaText("Show Bottomsheet",
                   fontStyle: UrbanistFont.mobile_text_2xl_extrabold),
             ),
             ElevatedButton(
               onPressed: () {
-                showGramediaSnackbar(context, message: "Grameida Service Error",action: SnackBarAction(
-        textColor: ColorHelper().getColor(GramediaColor.brand200),
-        label: 'Action',
-        onPressed: () {},
-      ),);
+                showGramediaSnackbar(
+                  context,
+                  message: "Grameida Service Error",
+                  action: SnackBarAction(
+                    textColor: ColorHelper().getColor(GramediaColor.brand200),
+                    label: 'Action',
+                    onPressed: () {},
+                  ),
+                );
               },
               child: GramediaText("Show Snackbar",
                   fontStyle: UrbanistFont.mobile_text_2xl_extrabold),
             ),
             ElevatedButton(
               onPressed: () {
-                showGramediaAlert(context,title: "Error", message: "Grameida Service Error");
+                showGramediaAlert(context,
+                    title: "Error", message: "Grameida Service Error");
               },
               child: GramediaText("Show Alert",
                   fontStyle: UrbanistFont.mobile_text_2xl_extrabold),

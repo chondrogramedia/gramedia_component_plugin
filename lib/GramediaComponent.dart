@@ -15,3 +15,9 @@ export 'package:papilus_component_gramedia/SegmentedControlled/SegmentedWidget.d
 export 'package:papilus_component_gramedia/Chips/GramediaChips.dart';
 export 'package:papilus_component_gramedia/Textfield/GramediaTextField.dart';
 export 'package:papilus_component_gramedia/LoadingIndicator/GramediaLoadingIndicator.dart';
+/// Tab bar
+export 'package:papilus_component_gramedia/TabBar/GramediaTab.dart';
+export 'package:papilus_component_gramedia/TabBar/GramediaTabBar.dart';
+export 'package:papilus_component_gramedia/TabBar/GramediaTabView.dart';
+/// Button
+export 'package:papilus_component_gramedia/Button/GramediaButton.dart';

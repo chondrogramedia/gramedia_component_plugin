@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:papilus_component_gramedia/Core/Color/Color.dart';
 import 'package:papilus_component_gramedia/Core/Typography/Typography.dart';
+import 'package:papilus_component_gramedia/GramediaComponent.dart';
 
 class HeaderBottomSheet extends StatelessWidget {
   Function()? onTapClose;
   Function()? onTapBack;
   String title;
-  HeaderBottomSheet({this.onTapBack, this.onTapClose,required this.title});
+  HeaderBottomSheet({this.onTapBack, this.onTapClose, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +28,11 @@ class HeaderBottomSheet extends StatelessWidget {
                 )),
           ),
           const Spacer(),
-          Text(
+          GramediaText(
             title,
+            fontStyle: UrbanistFont.mobile_text_l_extrabold,
             textAlign: TextAlign.center,
-            style: TypographyHelper().getValue(
-                UrbanistFont.mobile_text_l_extrabold,
-                ColorHelper().getColor(GramediaColor.neutral700),
-                false),
+            color: ColorHelper().getColor(GramediaColor.neutral700),
           ),
           Spacer(),
           onTapClose != null
