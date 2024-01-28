@@ -5,6 +5,8 @@ export 'package:papilus_component_gramedia/Core/Radius/Radius.dart';
 export 'package:papilus_component_gramedia/Core/Typography/Typography.dart';
 export 'package:papilus_component_gramedia/Core/Spacing/Spacing.dart';
 export 'package:papilus_component_gramedia/Core/Elevation/Elevation.dart';
+export 'package:papilus_component_gramedia/Core/MaterialStateProperty/ColorMaterialState.dart';
+export 'package:papilus_component_gramedia/Core/MaterialStateProperty/BorderMaterialState.dart';
 
 
 /// Component
@@ -21,3 +23,4 @@ export 'package:papilus_component_gramedia/TabBar/GramediaTabBar.dart';
 export 'package:papilus_component_gramedia/TabBar/GramediaTabView.dart';
 /// Button
 export 'package:papilus_component_gramedia/Button/GramediaButton.dart';
+export 'package:papilus_component_gramedia/IconButton/GramediaIconButton.dart';

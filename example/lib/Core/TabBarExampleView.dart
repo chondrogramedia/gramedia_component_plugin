@@ -31,13 +31,12 @@ class _TabBarExampleViewState extends State<TabBarExampleView> {
             child: Column(
               children: [
                 Container(
-                  color: Colors.white,
+                    color: Colors.white,
                     padding: EdgeInsets.symmetric(horizontal: 24),
                     child: GramediaTabBar(
                       indicator: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.red
-                      ),
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.red),
                       tabs: List.generate(
                           values.length,
                           (index) => GramediaTab(

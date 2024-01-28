@@ -10,6 +10,7 @@ import 'package:papilus_component_gramedia_example/Core/BottomSheetView.dart';
 import 'package:papilus_component_gramedia_example/Core/ColorView.dart';
 import 'package:papilus_component_gramedia_example/Core/ElevationView.dart';
 import 'package:papilus_component_gramedia_example/Core/ListButtonView.dart';
+import 'package:papilus_component_gramedia_example/Core/ListIconButtonView.dart';
 import 'package:papilus_component_gramedia_example/Core/LoadingIndicatorView.dart';
 import 'package:papilus_component_gramedia_example/Core/PLPCardView.dart';
 import 'package:papilus_component_gramedia_example/Core/RadiusView.dart';
@@ -71,7 +72,7 @@ enum TestingViewCase {
   loadingIndicator,
   plpcard,
   tabBarView,
-  button
+  button,iconButton
 }
 
 class _TestingViewState extends State<TestingView> with Alert {
@@ -115,6 +116,9 @@ class _TestingViewState extends State<TestingView> with Alert {
       case TestingViewCase.button:
         Navigator.push(
             context, MaterialPageRoute(builder: (_) => ListButtonView()));
+      case TestingViewCase.iconButton:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (_) => ListIconButtonView()));
     }
   }
 
