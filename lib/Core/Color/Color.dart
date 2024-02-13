@@ -57,7 +57,7 @@ extension on GramediaColor {
       case GramediaColor.accent700:
         return Color(0xff883D00);
       case GramediaColor.green50:
-        return Color(0xffeaf3e8);
+        return Color(0xffEAF3E8);
       case GramediaColor.green500:
         return Color(0xff2C8516);
       case GramediaColor.green600:
@@ -73,7 +73,7 @@ extension on GramediaColor {
       case GramediaColor.yellow700:
         return Color(0xff644F0E);
       case GramediaColor.red50:
-        return Color(0xfff8e7e9);
+        return Color(0xffF8E7E9);
       case GramediaColor.red500:
         return Color(0xffB91126);
       case GramediaColor.red600:
