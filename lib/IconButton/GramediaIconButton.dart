@@ -46,7 +46,7 @@ class GramediaIconButton extends StatelessWidget {
       this.borderFocused,
       this.borderHover,
       this.borderPressed});
-      
+
   final color = ColorHelper();
   final radius = RadiusHelper();
   final typography = TypographyHelper();
@@ -104,8 +104,8 @@ class GramediaIconButton extends StatelessWidget {
                 color.getColor(GramediaColor.neutral50),
             backgroundColor:
                 backgroundColor ?? color.getColor(GramediaColor.white),
-            backgroundDisabledColor: backgroundDisabledColor ??
-                color.getColor(GramediaColor.neutral150),
+            backgroundDisabledColor:
+                backgroundDisabledColor ?? color.getColor(GramediaColor.white),
             backgroundFocusedColor:
                 backgroundFocusedColor ?? color.getColor(GramediaColor.white),
             backgroundHoverColor: backgroundHoverColor ??
@@ -123,23 +123,28 @@ class GramediaIconButton extends StatelessWidget {
             shapeBorder: shapeBorder ??
                 CircleBorder(
                     side: BorderSide(
-                        color: color.getColor(GramediaColor.neutral150))),
+                        color: color.getColor(GramediaColor.neutral150),
+                        width: 1.0)),
             borderPressed: borderPressed ??
                 CircleBorder(
                     side: BorderSide(
-                        color: color.getColor(GramediaColor.neutral150))),
+                        color: color.getColor(GramediaColor.neutral150),
+                        width: 1.0)),
             borderHover: borderHover ??
                 CircleBorder(
                     side: BorderSide(
-                        color: color.getColor(GramediaColor.neutral700))),
+                        color: color.getColor(GramediaColor.neutral700),
+                        width: 1.0)),
             borderDisabled: borderDisabled ??
                 CircleBorder(
                     side: BorderSide(
-                        color: color.getColor(GramediaColor.neutral50))),
+                        color: color.getColor(GramediaColor.neutral50),
+                        width: 1.0)),
             borderFocused: borderFocused ??
                 CircleBorder(
                     side: BorderSide(
-                        color: color.getColor(GramediaColor.neutral150))));
+                        color: color.getColor(GramediaColor.neutral150),
+                        width: 1.0)));
       case ButtonPriority.tertiery:
         return iconButtonSize(buttonSize,
             backgroundPressedColor: backgroundPressedColor ??
@@ -189,11 +194,21 @@ class GramediaIconButton extends StatelessWidget {
   }) {
     switch (buttonSize) {
       case IconButtonType.extrasmall:
-        return IconButton(
-          iconSize: 12,
+        return TextButton(
           onPressed: onPressed,
-          icon: icon,
+          
+          child: icon,
+          
           style: ButtonStyle(
+            padding: MaterialStateProperty.all(EdgeInsets.zero,),
+              elevation: MaterialStateProperty.all<double>(0),
+              iconColor: colorState(foregroundColor,
+                  pressedColor: foregroundPressedColor,
+                  disabledColor: foregroundDisabledColor,
+                  focusedColor: foregroundFocusedColor,
+                  hoverColor: foregroundHoverColor),
+              iconSize: MaterialStateProperty.all<double>(12),
+              fixedSize: MaterialStateProperty.all<Size>(Size(20, 20)),
               foregroundColor: colorState(foregroundColor,
                   pressedColor: foregroundPressedColor,
                   disabledColor: foregroundDisabledColor,
@@ -212,11 +227,20 @@ class GramediaIconButton extends StatelessWidget {
                   disabledShape: borderDisabled)),
         );
       case IconButtonType.small:
-        return IconButton(
-          iconSize: 16,
+        return TextButton(
           onPressed: onPressed,
-          icon: icon,
+          
+          child: icon,
           style: ButtonStyle(
+            padding: MaterialStateProperty.all(EdgeInsets.zero,),
+              elevation: MaterialStateProperty.all<double>(0),
+              iconColor: colorState(foregroundColor,
+                  pressedColor: foregroundPressedColor,
+                  disabledColor: foregroundDisabledColor,
+                  focusedColor: foregroundFocusedColor,
+                  hoverColor: foregroundHoverColor),
+              iconSize: MaterialStateProperty.all<double>(16),
+              fixedSize: MaterialStateProperty.all<Size>(Size(24, 24)),
               foregroundColor: colorState(foregroundColor,
                   pressedColor: foregroundPressedColor,
                   disabledColor: foregroundDisabledColor,
@@ -235,11 +259,19 @@ class GramediaIconButton extends StatelessWidget {
                   disabledShape: borderDisabled)),
         );
       case IconButtonType.medium:
-        return IconButton(
-          iconSize: 24,
+        return TextButton(
           onPressed: onPressed,
-          icon: icon,
+          
           style: ButtonStyle(
+            padding: MaterialStateProperty.all(EdgeInsets.zero,),
+              elevation: MaterialStateProperty.all<double>(0),
+              iconColor: colorState(foregroundColor,
+                  pressedColor: foregroundPressedColor,
+                  disabledColor: foregroundDisabledColor,
+                  focusedColor: foregroundFocusedColor,
+                  hoverColor: foregroundHoverColor),
+              fixedSize: MaterialStateProperty.all<Size>(Size(40, 40)),
+              iconSize: MaterialStateProperty.all<double>(24),
               foregroundColor: colorState(foregroundColor,
                   pressedColor: foregroundPressedColor,
                   disabledColor: foregroundDisabledColor,
@@ -256,9 +288,12 @@ class GramediaIconButton extends StatelessWidget {
                   focusedShape: borderFocused,
                   hoveredShape: borderHover,
                   disabledShape: borderDisabled)),
+          child: icon,
         );
     }
   }
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -273,6 +308,11 @@ class GramediaIconButton extends StatelessWidget {
         foregroundDisabledColor: foregroundDisabledColor,
         foregroundFocusedColor: foregroundFocusedColor,
         foregroundHoverColor: foregroundHoverColor,
-        foregroundPressedColor: foregroundPressedColor);
+        foregroundPressedColor: foregroundPressedColor,
+        shapeBorder: shapeBorder,
+        borderDisabled: borderDisabled,
+        borderFocused: borderFocused,
+        borderHover: borderHover,
+        borderPressed: borderPressed);
   }
 }

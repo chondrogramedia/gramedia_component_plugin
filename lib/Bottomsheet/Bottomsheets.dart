@@ -36,6 +36,7 @@ mixin Alert {
             padding: EdgeInsets.only(top: 12),
             height: 460,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 HeaderBottomSheet(
                   title: header,

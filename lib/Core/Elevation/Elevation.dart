@@ -11,14 +11,14 @@ class ElevationHelper {
         return [
           BoxShadow(
               offset: Offset(0, 1),
-              color: neutral70.withOpacity(0.08),
-              spreadRadius: 1,
-              blurRadius: 3),
+              color: neutral70.withOpacity(0.04),
+              spreadRadius: 2,
+              blurRadius: 4),
           BoxShadow(
               offset: Offset(0, 1),
-              color: neutral70.withOpacity(0.20),
+              color: neutral70.withOpacity(0.10),
               spreadRadius: 0,
-              blurRadius: 9)
+              blurRadius: 8)
         ];
       case ElevationCase.elevation_2:
         return [

@@ -12,9 +12,9 @@ class MasterBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     var colorHelper = ColorHelper();
     return Container(
-      padding: EdgeInsets.all( 16),
+      padding: const EdgeInsets.only( top: 8,left: 16,bottom: 16,right: 16),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: children,
       ),
     );

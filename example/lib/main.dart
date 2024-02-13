@@ -5,8 +5,10 @@ import 'package:papilus_component_gramedia/Bottomsheet/Bottomsheets.dart';
 import 'package:flutter/services.dart';
 import 'package:papilus_component_gramedia/Core/Color/Color.dart';
 import 'package:papilus_component_gramedia/Core/Typography/Typography.dart';
+import 'package:papilus_component_gramedia/GramediaComponent.dart';
 import 'package:papilus_component_gramedia/Text/GramediaText.dart';
 import 'package:papilus_component_gramedia_example/Core/BottomSheetView.dart';
+import 'package:papilus_component_gramedia_example/Core/CheckboxList.dart';
 import 'package:papilus_component_gramedia_example/Core/ColorView.dart';
 import 'package:papilus_component_gramedia_example/Core/ElevationView.dart';
 import 'package:papilus_component_gramedia_example/Core/ListButtonView.dart';
@@ -14,9 +16,12 @@ import 'package:papilus_component_gramedia_example/Core/ListIconButtonView.dart'
 import 'package:papilus_component_gramedia_example/Core/LoadingIndicatorView.dart';
 import 'package:papilus_component_gramedia_example/Core/PLPCardView.dart';
 import 'package:papilus_component_gramedia_example/Core/RadiusView.dart';
+import 'package:papilus_component_gramedia_example/Core/SearchProduct.dart';
 import 'package:papilus_component_gramedia_example/Core/SegmentecControllerView.dart';
 import 'package:papilus_component_gramedia_example/Core/SpacingView.dart';
+import 'package:papilus_component_gramedia_example/Core/SwitcherView.dart';
 import 'package:papilus_component_gramedia_example/Core/TabBarExampleView.dart';
+import 'package:papilus_component_gramedia_example/Core/TabBarListView.dart';
 import 'package:papilus_component_gramedia_example/Core/TextFieldView.dart';
 import 'package:papilus_component_gramedia_example/Core/TypographyView.dart';
 import 'package:papilus_component_gramedia_example/Core/WrapChipsView.dart';
@@ -47,7 +52,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         localizationsDelegates: [DefaultMaterialLocalizations.delegate],
-        theme: ThemeData(),
+        theme: ThemeData(useMaterial3: true),
         home: TestingView());
   }
 }
@@ -65,17 +70,21 @@ enum TestingViewCase {
   radius,
   spacing,
   showBottomsheet,
-  segmentedControl,
   chips,
   textfield,
   elevation,
   loadingIndicator,
   plpcard,
   tabBarView,
-  button,iconButton
+  tabBarListView,
+  button,
+  iconButton,
+  checkbox,
+  switcher,
+  search,
 }
 
-class _TestingViewState extends State<TestingView> with Alert {
+class _TestingViewState extends State<TestingView> with Alert, Navigation {
   void navigation(TestingViewCase caseValue) {
     switch (caseValue) {
       case TestingViewCase.color:
@@ -90,11 +99,8 @@ class _TestingViewState extends State<TestingView> with Alert {
         Navigator.push(
             context, MaterialPageRoute(builder: (_) => SpacingView()));
       case TestingViewCase.showBottomsheet:
-         Navigator.push(context,
-            MaterialPageRoute(builder: (_) => BottomSheetView()));
-      case TestingViewCase.segmentedControl:
-        Navigator.push(context,
-            MaterialPageRoute(builder: (_) => SegmentedCustomView()));
+        Navigator.push(
+            context, MaterialPageRoute(builder: (_) => BottomSheetView()));
       case TestingViewCase.chips:
         Navigator.push(
             context, MaterialPageRoute(builder: (_) => WrapChipsView()));
@@ -111,14 +117,21 @@ class _TestingViewState extends State<TestingView> with Alert {
         Navigator.push(
             context, MaterialPageRoute(builder: (_) => PLPCardView()));
       case TestingViewCase.tabBarView:
-         Navigator.push(
+        Navigator.push(
             context, MaterialPageRoute(builder: (_) => TabBarExampleView()));
       case TestingViewCase.button:
         Navigator.push(
             context, MaterialPageRoute(builder: (_) => ListButtonView()));
       case TestingViewCase.iconButton:
-        Navigator.push(
-            context, MaterialPageRoute(builder: (_) => ListIconButtonView()));
+        go(context, page: ListIconButtonView());
+      case TestingViewCase.tabBarListView:
+        go(context, page: TabBarListView());
+      case TestingViewCase.checkbox:
+        go(context, page: CheckboxList());
+      case TestingViewCase.switcher:
+        go(context, page: SwitcherView());
+      case TestingViewCase.search:
+        go(context, page: SearchProduct());
     }
   }
 
@@ -137,7 +150,11 @@ class _TestingViewState extends State<TestingView> with Alert {
                     onPressed: () {
                       navigation(TestingViewCase.values[index]);
                     },
-                    child: GramediaText(TestingViewCase.values[index].name, fontStyle: UrbanistFont.mobile_text_l_extrabold,color: Colors.white,))),
+                    child: GramediaText(
+                      TestingViewCase.values[index].name,
+                      fontStyle: UrbanistFont.mobile_text_l_extrabold,
+                      color: Colors.white,
+                    ))),
           ),
         ));
   }

@@ -35,7 +35,9 @@ class GramediaTextField extends StatelessWidget {
       this.keyboardType,
       this.validator,
       this.onSaved,
-      this.onFieldSubmitted,this.inputFormatters, this.isObsecure = false});
+      this.onFieldSubmitted,
+      this.inputFormatters,
+      this.isObsecure = false});
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +64,7 @@ class GramediaTextField extends StatelessWidget {
           prefix: prefix,
           prefixIcon: prefixIcon,
           errorStyle: typograpy.getValue(UrbanistFont.mobile_text_m_medium,
-          color.getColor(GramediaColor.red500), false),
+              color.getColor(GramediaColor.red500), false),
           labelStyle: typograpy.getValue(UrbanistFont.mobile_text_m_medium,
               color.getColor(textColor ?? GramediaColor.neutral700), false),
           disabledBorder: OutlineInputBorder(
@@ -70,7 +72,7 @@ class GramediaTextField extends StatelessWidget {
                   color: color.getColor(GramediaColor.neutral200), width: 1.0),
               borderRadius:
                   BorderRadius.circular(radius.radius(RadiusCase.radius_S))),
-                  focusedErrorBorder: OutlineInputBorder(
+          focusedErrorBorder: OutlineInputBorder(
               borderSide: BorderSide(
                   color: color.getColor(GramediaColor.red500), width: 1.0),
               borderRadius:
