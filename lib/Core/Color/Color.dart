@@ -33,7 +33,7 @@ enum GramediaColor {
 
 extension on GramediaColor {
   Color get valueColor {
-    switch(this){
+    switch (this) {
       case GramediaColor.white:
         return Color(0xffFFFFFF);
       case GramediaColor.neutral50:
@@ -57,7 +57,7 @@ extension on GramediaColor {
       case GramediaColor.accent700:
         return Color(0xff883D00);
       case GramediaColor.green50:
-        return Color(0xffEAF3E8);
+        return Color(0xffeaf3e8);
       case GramediaColor.green500:
         return Color(0xff2C8516);
       case GramediaColor.green600:
@@ -73,7 +73,7 @@ extension on GramediaColor {
       case GramediaColor.yellow700:
         return Color(0xff644F0E);
       case GramediaColor.red50:
-        return Color(0xffF8E7E9);
+        return Color(0xfff8e7e9);
       case GramediaColor.red500:
         return Color(0xffB91126);
       case GramediaColor.red600:
@@ -96,9 +96,9 @@ extension on GramediaColor {
   }
 }
 
-class ColorHelper{
-  Color getColor(GramediaColor color){
-    switch(color){
+class ColorHelper {
+  Color getColor(GramediaColor color) {
+    switch (color) {
       case GramediaColor.white:
         return Color(0xffFFFFFF);
       case GramediaColor.neutral50:
