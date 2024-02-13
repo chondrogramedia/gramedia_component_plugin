@@ -404,13 +404,13 @@ class _GramediaButtonState extends State<GramediaButton> {
             backgroundPressedColor: backgroundPressedColor ??
                 color.getColor(GramediaColor.brand600),
             backgroundColor:
-                backgroundColor ?? color.getColor(GramediaColor.brand500),
+                backgroundColor ?? color.getColor(GramediaColor.neutral50),
             backgroundDisabledColor: backgroundDisabledColor ??
-                color.getColor(GramediaColor.neutral200),
+                color.getColor(GramediaColor.neutral50),
             backgroundFocusedColor: backgroundFocusedColor ??
                 color.getColor(GramediaColor.brand500),
             backgroundHoverColor:
-                backgroundHoverColor ?? color.getColor(GramediaColor.brand700),
+                backgroundHoverColor ?? color.getColor(GramediaColor.neutral50),
             foregroundPressedColor: foregroundPressedColor ??
                 color.getColor(GramediaColor.neutral600),
             foregroundColor:
@@ -459,8 +459,7 @@ class _GramediaButtonState extends State<GramediaButton> {
             ),
             hoveredBorder: RoundedRectangleBorder(
                 side: BorderSide(
-                    color: color.getColor(GramediaColor.neutral700),
-                    width: 1.0),
+                    color: color.getColor(GramediaColor.neutral50), width: 1.0),
                 borderRadius: BorderRadius.circular(
                     radiusHelper.radius(radius ?? RadiusCase.radius_S))),
             focusedBorder: RoundedRectangleBorder(
@@ -471,7 +470,8 @@ class _GramediaButtonState extends State<GramediaButton> {
                     radiusHelper.radius(radius ?? RadiusCase.radius_S))),
             disabledBorder: RoundedRectangleBorder(
                 side: BorderSide(
-                    color: color.getColor(GramediaColor.neutral50), width: 1.0),
+                    color: color.getColor(GramediaColor.neutral200),
+                    width: 1.0),
                 borderRadius: BorderRadius.circular(
                     radiusHelper.radius(radius ?? RadiusCase.radius_S))),
           );
@@ -480,7 +480,7 @@ class _GramediaButtonState extends State<GramediaButton> {
             backgroundPressedColor: backgroundPressedColor ??
                 color.getColor(GramediaColor.neutral50),
             backgroundColor:
-                backgroundColor ?? color.getColor(GramediaColor.white),
+                backgroundColor ?? color.getColor(GramediaColor.neutral50),
             backgroundDisabledColor: backgroundDisabledColor ??
                 color.getColor(GramediaColor.neutral50),
             backgroundFocusedColor:
@@ -519,7 +519,7 @@ class _GramediaButtonState extends State<GramediaButton> {
             disabledStyle: typography.getValue(
                 UrbanistFont.mobile_text_s_extrabold,
                 foregroundDisabledColor ??
-                    color.getColor(GramediaColor.neutral200),
+                    color.getColor(GramediaColor.neutral150),
                 false),
             baseBorder: RoundedRectangleBorder(
                 side: BorderSide(
@@ -547,7 +547,8 @@ class _GramediaButtonState extends State<GramediaButton> {
                     radiusHelper.radius(radius ?? RadiusCase.radius_S))),
             disabledBorder: RoundedRectangleBorder(
                 side: BorderSide(
-                    color: color.getColor(GramediaColor.neutral50), width: 1.0),
+                    color: color.getColor(GramediaColor.neutral200),
+                    width: 1.0),
                 borderRadius: BorderRadius.circular(
                     radiusHelper.radius(radius ?? RadiusCase.radius_S))),
           );
@@ -569,22 +570,25 @@ class _GramediaButtonState extends State<GramediaButton> {
             foregroundPressedColor:
                 foregroundPressedColor ?? color.getColor(GramediaColor.white),
             foregroundColor:
-                foregroundColor ?? color.getColor(GramediaColor.white),
-            foregroundDisabledColor:
-                foregroundDisabledColor ?? color.getColor(GramediaColor.white),
+                foregroundColor ?? color.getColor(GramediaColor.neutral700),
+            foregroundDisabledColor: foregroundDisabledColor ??
+                color.getColor(GramediaColor.neutral150),
             foregroundFocusedColor:
                 foregroundFocusedColor ?? color.getColor(GramediaColor.white),
-            foregroundHoverColor:
-                foregroundHoverColor ?? color.getColor(GramediaColor.white),
-            baseStyle: typography.getValue(UrbanistFont.mobile_text_s_extrabold,
-                foregroundColor ?? color.getColor(GramediaColor.white), false),
+            foregroundHoverColor: foregroundHoverColor ??
+                color.getColor(GramediaColor.neutral600),
+            baseStyle: typography.getValue(
+                UrbanistFont.mobile_text_s_extrabold,
+                foregroundColor ?? color.getColor(GramediaColor.neutral700),
+                false),
             pressedStyle: typography.getValue(
                 UrbanistFont.mobile_text_s_extrabold,
                 foregroundPressedColor ?? color.getColor(GramediaColor.white),
                 false),
             hoveredStyle: typography.getValue(
                 UrbanistFont.mobile_text_s_extrabold,
-                foregroundHoverColor ?? color.getColor(GramediaColor.white),
+                foregroundHoverColor ??
+                    color.getColor(GramediaColor.neutral700),
                 false),
             focusedStyle: typography.getValue(
                 UrbanistFont.mobile_text_s_extrabold,
@@ -592,7 +596,8 @@ class _GramediaButtonState extends State<GramediaButton> {
                 false),
             disabledStyle: typography.getValue(
                 UrbanistFont.mobile_text_s_extrabold,
-                foregroundDisabledColor ?? color.getColor(GramediaColor.white),
+                foregroundDisabledColor ??
+                    color.getColor(GramediaColor.neutral500),
                 false),
             baseBorder: const RoundedRectangleBorder(
               side: BorderSide.none,
@@ -686,6 +691,7 @@ class _GramediaButtonState extends State<GramediaButton> {
         backgroundDisabledColor: widget.backgroundDisabledColor,
         backgroundFocusedColor: widget.backgroundFocusedColor,
         backgroundHoverColor: widget.backgroundHoverColor,
-        backgroundPressedColor: widget.backgroundPressedColor);
+        backgroundPressedColor: widget.backgroundPressedColor,
+        icon: widget.icon);
   }
 }

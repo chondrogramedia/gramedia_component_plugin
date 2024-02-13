@@ -107,7 +107,6 @@ class _ListButtonViewState extends State<ListButtonView> {
               GramediaButton(
                   icon: Icon(
                     Icons.add,
-                    color: Colors.black,
                   ),
                   child: Text("Button"),
                   onPressed: () {},
@@ -120,7 +119,6 @@ class _ListButtonViewState extends State<ListButtonView> {
               GramediaButton(
                   icon: Icon(
                     Icons.add,
-                  
                   ),
                   child: Text("Button"),
                   onPressed: null,
