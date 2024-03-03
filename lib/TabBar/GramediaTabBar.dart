@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:papilus_component_gramedia/Core/Typography/Typography.dart';
 import 'package:papilus_component_gramedia/GramediaComponent.dart';
 
-mixin GramediaTabMixin{}
+mixin GramediaTabMixin {}
 
 class GramediaTabController = TabController with GramediaTabMixin;
 
@@ -17,7 +17,8 @@ class GramediaTabBar extends StatelessWidget {
       {required this.tabs,
       this.indicator,
       this.isScrollable = false,
-      this.colorLabel, this.controller});
+      this.colorLabel,
+      this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +26,7 @@ class GramediaTabBar extends StatelessWidget {
     final color = ColorHelper();
     return TabBar(
       controller: controller,
+      dividerColor: Colors.transparent,
       tabs: tabs,
       indicator: indicator,
       isScrollable: isScrollable,

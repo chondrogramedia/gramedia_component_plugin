@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class PanelAnimation<T> extends StatelessWidget {
-  const PanelAnimation(
+class PanelNavigationAnimation<T> extends StatefulWidget {
+  const PanelNavigationAnimation(
       {super.key,
       required this.offset,
       required this.width,
@@ -20,16 +20,30 @@ class PanelAnimation<T> extends StatelessWidget {
   final BoxDecoration? decoration;
 
   @override
+  State<PanelNavigationAnimation<T>> createState() =>
+      _PanelNavigationAnimationState<T>();
+}
+
+class _PanelNavigationAnimationState<T>
+    extends State<PanelNavigationAnimation<T>> {
+  @override
+  void initState() {
+    // TODO: implement initState
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final isRtl = Directionality.of(context) == TextDirection.rtl;
-    final _offset = isRtl ? offset * -1 : offset;
+    final _offset = isRtl ? widget.offset * -1 : widget.offset;
     return AnimatedContainer(
       transform: Matrix4.translationValues(_offset, 0, 0),
-      duration: duration,
-      curve: curve,
-      width: width,
-      height: height,
-      decoration: decoration,
+      duration: widget.duration,
+      curve: widget.curve,
+      width: widget.width,
+      height: widget.height,
+      decoration: widget.decoration,
     );
   }
 }

@@ -32,3 +32,12 @@ export 'Switcher/GramediaSwitcher.dart';
 
 /// SearchBar
 export 'Search/GramediaSearchField.dart';
+
+/// NavigationBar
+export 'NavigationBar/GramediaNavigationBar.dart';
+
+/// Label
+export 'Label/GramediaLabel.dart';
+
+/// Icon
+export 'Icon/GramediaIcon.dart';

@@ -11,9 +11,11 @@ import 'package:papilus_component_gramedia_example/Core/BottomSheetView.dart';
 import 'package:papilus_component_gramedia_example/Core/CheckboxList.dart';
 import 'package:papilus_component_gramedia_example/Core/ColorView.dart';
 import 'package:papilus_component_gramedia_example/Core/ElevationView.dart';
+import 'package:papilus_component_gramedia_example/Core/LabelValueView.dart';
 import 'package:papilus_component_gramedia_example/Core/ListButtonView.dart';
 import 'package:papilus_component_gramedia_example/Core/ListIconButtonView.dart';
 import 'package:papilus_component_gramedia_example/Core/LoadingIndicatorView.dart';
+import 'package:papilus_component_gramedia_example/Core/NavigationBarView.dart';
 import 'package:papilus_component_gramedia_example/Core/PLPCardView.dart';
 import 'package:papilus_component_gramedia_example/Core/RadiusView.dart';
 import 'package:papilus_component_gramedia_example/Core/SearchProduct.dart';
@@ -82,6 +84,8 @@ enum TestingViewCase {
   checkbox,
   switcher,
   search,
+  navigationBar,
+  label
 }
 
 class _TestingViewState extends State<TestingView> with Alert, Navigation {
@@ -132,6 +136,10 @@ class _TestingViewState extends State<TestingView> with Alert, Navigation {
         go(context, page: SwitcherView());
       case TestingViewCase.search:
         go(context, page: SearchProduct());
+      case TestingViewCase.navigationBar:
+        go(context, page: NavigationBarView());
+      case TestingViewCase.label:
+        go(context, page: LabelValueView());
     }
   }
 

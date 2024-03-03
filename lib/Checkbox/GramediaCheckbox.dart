@@ -71,11 +71,18 @@ class GramediaCheckbox extends StatelessWidget {
       }
     }
 
-    return TextButton(
-        onPressed:onChanged != null ? () {
-          onChanged!(setValue(value, tristate ?? false));
-        } : null,
-        child: AnimatedSwitcher(
+    return IconButton(
+        hoverColor: fillHoverColor,
+        style: IconButton.styleFrom(
+            hoverColor: fillHoverColor,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15))),
+        onPressed: onChanged != null
+            ? () {
+                onChanged!(setValue(value, tristate ?? false));
+              }
+            : null,
+        icon: AnimatedSwitcher(
           duration: Duration(milliseconds: 500),
           child: buildAnimation(value, tristate ?? false),
         ));
