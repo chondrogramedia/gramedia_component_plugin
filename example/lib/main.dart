@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:papilus_component_gramedia/Bottomsheet/Bottomsheets.dart';
@@ -10,6 +9,7 @@ import 'package:papilus_component_gramedia/Text/GramediaText.dart';
 import 'package:papilus_component_gramedia_example/Core/BottomSheetView.dart';
 import 'package:papilus_component_gramedia_example/Core/CheckboxList.dart';
 import 'package:papilus_component_gramedia_example/Core/ColorView.dart';
+import 'package:papilus_component_gramedia_example/Core/DotSetupView.dart';
 import 'package:papilus_component_gramedia_example/Core/ElevationView.dart';
 import 'package:papilus_component_gramedia_example/Core/LabelValueView.dart';
 import 'package:papilus_component_gramedia_example/Core/ListButtonView.dart';
@@ -85,7 +85,8 @@ enum TestingViewCase {
   switcher,
   search,
   navigationBar,
-  label
+  label,
+  dotIndicator
 }
 
 class _TestingViewState extends State<TestingView> with Alert, Navigation {
@@ -140,6 +141,8 @@ class _TestingViewState extends State<TestingView> with Alert, Navigation {
         go(context, page: NavigationBarView());
       case TestingViewCase.label:
         go(context, page: LabelValueView());
+      case TestingViewCase.dotIndicator:
+        go(context, page: DotSetupView());
     }
   }
 

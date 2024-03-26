@@ -12,6 +12,14 @@ class NavigationBarView extends StatefulWidget {
 
 class _NavigationBarViewState extends State<NavigationBarView> {
   int currentIndex = 0;
+  var valueArray = [
+    "gramedia_filled",
+    "gridCircles_filled",
+    "heart_filled",
+    "person_filled"
+  ];
+
+  var valueData = ["gramedia", "kategori", "wishlist", "profile"];
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -35,7 +43,10 @@ class _NavigationBarViewState extends State<NavigationBarView> {
                 return Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.home),
+                    Image.asset(
+                      "assets/bottom_nav/${valueData[index]}/${currentIndex == index ? "selected" : "unselected"}/${valueArray[index]}.png",
+                      package: "papilus_component_gramedia",
+                    ),
                     GramediaText("Home",
                         fontStyle: UrbanistFont.mobile_text_2xs_extrabold)
                   ],

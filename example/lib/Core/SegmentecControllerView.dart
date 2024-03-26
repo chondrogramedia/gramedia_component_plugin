@@ -50,28 +50,26 @@ class _SegmentedControllerViewState extends State<SegmentedControllerView> {
 
     //   } else {
     //     return 0.0;
-    //   } 
+    //   }
     // }
     List<Widget> childValue = [
-       Text("Chondro"),
-                        Row(
-                          children: [Icon(Icons.abc), Text("Chondro Ganteng")],
-                        ),
-                        Text("Chondro"),
-                         Row(
-                          children: [Icon(Icons.abc), Text("Chondro Ganteng")],
-                        ),
-                         Row(
-                          children: [Icon(Icons.abc), Text("Chondro Ganteng")],
-                        )
+      Text("Chondro"),
+      Row(
+        children: [Icon(Icons.abc), Text("Chondro Ganteng")],
+      ),
+      Text("Chondro"),
+      Row(
+        children: [Icon(Icons.abc), Text("Chondro Ganteng")],
+      ),
+      Row(
+        children: [Icon(Icons.abc), Text("Chondro Ganteng")],
+      )
     ];
-    Map<int,Widget> setChildren (List<Widget> children){
+    Map<int, Widget> setChildren(List<Widget> children) {
       var index = 0;
-      Map<int,Widget> values = {};
-      while (index < children.length){
-        values.addAll({
-          index : children[index]
-        });
+      Map<int, Widget> values = {};
+      while (index < children.length) {
+        values.addAll({index: children[index]});
         index += 1;
       }
       return values;
@@ -86,31 +84,24 @@ class _SegmentedControllerViewState extends State<SegmentedControllerView> {
           children: [
             SizedBox(
               height: 40,
-              child: ListView(
-                physics: AlwaysScrollableScrollPhysics(),
-                controller: scrollController,
-                scrollDirection: Axis.horizontal,
-                children: [
-                  GramediaSegmentedWidget<int>(
-                      customSegmentSettings:
-                          SegmentedSettings(highlightColor: Colors.blue),
-                      curve: Curves.easeIn,
-                      initialValue: currentIndex,
-                      children: setChildren(childValue),
-                      onValueChanged: (value) {
-                        // setState(() {
-                        //   currentIndex = value;
-                        // });
-                        
-                      }, onOffsetScroll: (index, value) {
-                        var width = size.width;
-                       
-                        
-                        setState(() {
-                          currentIndex = index;
-                        });
-                      },)
-                ],
+              child: GramediaSegmentedWidget<int>(
+                customSegmentSettings:
+                    SegmentedSettings(highlightColor: Colors.blue),
+                curve: Curves.easeIn,
+                initialValue: currentIndex,
+                children: setChildren(childValue),
+                onValueChanged: (value) {
+                  // setState(() {
+                  //   currentIndex = value;
+                  // });
+                },
+                onOffsetScroll: (index, value) {
+                  var width = size.width;
+
+                  setState(() {
+                    currentIndex = index;
+                  });
+                },
               ),
             ),
             // GramediaSegmentedWidget<int>(

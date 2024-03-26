@@ -51,6 +51,14 @@ flutter:
   assets:
     - assets/image-2.png
     - assets/
+    - assets/bottom_nav/gramedia/selected/
+    - assets/bottom_nav/gramedia/unselected/
+    - assets/bottom_nav/kategori/selected/
+    - assets/bottom_nav/kategori/unselected/
+    - assets/bottom_nav/wishlist/selected/
+    - assets/bottom_nav/wishlist/unselected/
+    - assets/bottom_nav/profile/selected/
+    - assets/bottom_nav/profile/unselected/
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

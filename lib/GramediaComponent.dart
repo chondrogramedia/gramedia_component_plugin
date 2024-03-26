@@ -41,3 +41,6 @@ export 'Label/GramediaLabel.dart';
 
 /// Icon
 export 'Icon/GramediaIcon.dart';
+
+/// Dot Indicator
+export 'DotIndicator/GramediaIndicator.dart';
