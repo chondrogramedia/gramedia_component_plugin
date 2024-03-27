@@ -7,6 +7,7 @@ import 'package:papilus_component_gramedia/Core/Typography/Typography.dart';
 import 'package:papilus_component_gramedia/GramediaComponent.dart';
 import 'package:papilus_component_gramedia/Text/GramediaText.dart';
 import 'package:papilus_component_gramedia_example/Core/BottomSheetView.dart';
+import 'package:papilus_component_gramedia_example/Core/CategoryView.dart';
 import 'package:papilus_component_gramedia_example/Core/CheckboxList.dart';
 import 'package:papilus_component_gramedia_example/Core/ColorView.dart';
 import 'package:papilus_component_gramedia_example/Core/DotSetupView.dart';
@@ -32,6 +33,10 @@ import 'package:papilus_component_gramedia_example/View/TabBarCustomView.dart';
 
 void main() {
   runApp(const MyApp());
+}
+
+class TestingValue {
+  TestingValue({required String name});
 }
 
 class MyApp extends StatefulWidget {
@@ -86,7 +91,8 @@ enum TestingViewCase {
   search,
   navigationBar,
   label,
-  dotIndicator
+  dotIndicator,
+  category
 }
 
 class _TestingViewState extends State<TestingView> with Alert, Navigation {
@@ -143,6 +149,8 @@ class _TestingViewState extends State<TestingView> with Alert, Navigation {
         go(context, page: LabelValueView());
       case TestingViewCase.dotIndicator:
         go(context, page: DotSetupView());
+      case TestingViewCase.category:
+        go(context, page: CategoryView());
     }
   }
 

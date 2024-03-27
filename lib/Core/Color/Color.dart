@@ -31,7 +31,7 @@ enum GramediaColor {
   brand700
 }
 
-extension on GramediaColor {
+extension MyColorExtension on GramediaColor {
   Color get valueColor {
     switch (this) {
       case GramediaColor.white:

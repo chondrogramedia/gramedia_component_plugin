@@ -36,7 +36,7 @@ class _TabBarExampleViewState extends State<TabBarExampleView> {
                     child: GramediaTabBar(
                       indicator: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Colors.red),
+                          color: GramediaColor.accent50.valueColor),
                       tabs: List.generate(
                           values.length,
                           (index) => GramediaTab(

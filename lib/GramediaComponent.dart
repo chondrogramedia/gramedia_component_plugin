@@ -44,3 +44,6 @@ export 'Icon/GramediaIcon.dart';
 
 /// Dot Indicator
 export 'DotIndicator/GramediaIndicator.dart';
+
+/// Gramedia Category
+export 'Category/GramediaCategory.dart';

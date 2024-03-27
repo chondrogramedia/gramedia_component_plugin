@@ -13,6 +13,9 @@ class PLPCardView extends StatefulWidget {
 class _PLPCardViewState extends State<PLPCardView> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    final double itemHeight = 160;
+    final double itemWidth = 120;
     return Scaffold(
       appBar: AppBar(
         title: GramediaText(
@@ -21,18 +24,17 @@ class _PLPCardViewState extends State<PLPCardView> {
           color: Colors.white,
         ),
       ),
-      body: SingleChildScrollView(
-        child: Wrap(
-          children: List.generate(
-              6,
-              (index) => MasterPLPCard(
-                    imageUrl:
-                        "https://elexmedia.s3.amazonaws.com/product/9789792039504.jpg",
-                    author: "Echiro Oda",
-                    title: "One Piece",
-                    
-                  )),
-        ),
+      body: GridView.count(
+        childAspectRatio: (itemWidth / itemHeight),
+        crossAxisCount: 2,
+        children: List.generate(
+            10,
+            (index) => MasterPLPCard(
+                  imageUrl:
+                      "https://elexmedia.s3.amazonaws.com/product/9789792039504.jpg",
+                  author: "Echiro Oda",
+                  title: "One Piece",
+                )),
       ),
     );
   }
