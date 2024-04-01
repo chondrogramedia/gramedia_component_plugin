@@ -39,7 +39,6 @@ class GramediaDotIndicator extends StatelessWidget {
     if (direction == Axis.horizontal) {
       return Row(
         mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: List.generate(
             length,
             (index) => Padding(

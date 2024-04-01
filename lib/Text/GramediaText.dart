@@ -22,6 +22,7 @@ class GramediaText extends StatelessWidget {
       style: TypographyHelper()
           .getValue(fontStyle, color ?? Colors.black, isUndlerlined),
       textAlign: textAlign,
+      overflow: TextOverflow.ellipsis,
     );
   }
 }

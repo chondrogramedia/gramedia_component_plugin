@@ -90,72 +90,73 @@ class _GramediaSearchFieldState extends State<GramediaSearchField> {
 
     return SizedBox(
       height: 48,
-      child: TextField(
-        enabled: widget.isEnabled,
-        decoration: InputDecoration(
-            suffixIcon: iconButton(colorStateValue),
-            hintText: widget.hintText,
-            contentPadding:
-                const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            prefixIcon: Icon(
-              Icons.search,
-              color: widget.isEnabled
-                  ? searchFieldColor(colorStateValue)
-                  : color.getColor(GramediaColor.neutral150),
-            ),
-            hintStyle:
-                textStyleState(typograpy.getValue(UrbanistFont.mobile_text_s_medium, color.getColor(GramediaColor.neutral200), false),
-                        pressedStyle: typograpy.getValue(
-                            UrbanistFont.mobile_text_s_medium,
-                            color.getColor(GramediaColor.neutral200),
-                            false),
-                        disabledStyle: typograpy.getValue(
-                            UrbanistFont.mobile_text_s_medium,
-                            color.getColor(GramediaColor.neutral200),
-                            false),
-                        hoveredStyle: typograpy.getValue(
-                            UrbanistFont.mobile_text_s_medium,
-                            color.getColor(GramediaColor.neutral200),
-                            false),
-                        focusedStyle: typograpy.getValue(
-                            UrbanistFont.mobile_text_s_medium,
-                            color.getColor(GramediaColor.neutral200),
-                            false))
-                    .resolve({
-              MaterialState.disabled,
-              MaterialState.error,
-              MaterialState.focused,
-              MaterialState.pressed
-            }),
-            fillColor: widget.isEnabled
-                ? colorState(color.getColor(GramediaColor.white),
-                        pressedColor: color.getColor(GramediaColor.white),
-                        disabledColor: color.getColor(GramediaColor.neutral50),
-                        focusedColor: color.getColor(GramediaColor.white),
-                        hoverColor: color.getColor(GramediaColor.white))
-                    .resolve({
-                    MaterialState.disabled,
-                    MaterialState.error,
-                    MaterialState.focused,
-                    MaterialState.pressed
-                  })
-                : color.getColor(GramediaColor.neutral50),
-            filled: true,
-            disabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.transparent, width: 0.0), borderRadius: BorderRadius.circular(radius.radius(RadiusCase.radius_infinity))),
-            focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: color.getColor(GramediaColor.red500), width: 1.0), borderRadius: BorderRadius.circular(radius.radius(RadiusCase.radius_infinity))),
-            errorBorder: OutlineInputBorder(borderSide: BorderSide(color: color.getColor(GramediaColor.red500), width: 1.0), borderRadius: BorderRadius.circular(radius.radius(RadiusCase.radius_infinity))),
-            focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: color.getColor(GramediaColor.neutral700), width: 2.0), borderRadius: BorderRadius.circular(radius.radius(RadiusCase.radius_infinity))),
-            enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: color.getColor(GramediaColor.neutral500), width: 1.0), borderRadius: BorderRadius.circular(radius.radius(RadiusCase.radius_infinity)))),
-        controller: widget.controller,
-        focusNode: widget.focusNode,
-        onChanged: widget.onChanged,
-        onTap: () {
-          widget.onTap != null ? widget.onTap! : onTapNull();
-          setState(() {
-            colorStateValue = SearchFieldState.focus;
-          });
-        },
-        onSubmitted: widget.onSubmitted,
+      child: Material(
+        child: TextField(
+          enabled: widget.isEnabled,
+          decoration: InputDecoration(
+              suffixIcon: iconButton(colorStateValue),
+              hintText: widget.hintText,
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              prefixIcon: Icon(
+                Icons.search,
+                color: widget.isEnabled
+                    ? searchFieldColor(colorStateValue)
+                    : color.getColor(GramediaColor.neutral150),
+              ),
+              hintStyle: textStyleState(typograpy.getValue(UrbanistFont.mobile_text_s_medium, color.getColor(GramediaColor.neutral200), false),
+                      pressedStyle: typograpy.getValue(
+                          UrbanistFont.mobile_text_s_medium,
+                          color.getColor(GramediaColor.neutral200),
+                          false),
+                      disabledStyle: typograpy.getValue(
+                          UrbanistFont.mobile_text_s_medium,
+                          color.getColor(GramediaColor.neutral200),
+                          false),
+                      hoveredStyle: typograpy.getValue(
+                          UrbanistFont.mobile_text_s_medium,
+                          color.getColor(GramediaColor.neutral200),
+                          false),
+                      focusedStyle: typograpy.getValue(
+                          UrbanistFont.mobile_text_s_medium,
+                          color.getColor(GramediaColor.neutral200),
+                          false))
+                  .resolve({
+                MaterialState.disabled,
+                MaterialState.error,
+                MaterialState.focused,
+                MaterialState.pressed
+              }),
+              fillColor: widget.isEnabled
+                  ? colorState(color.getColor(GramediaColor.white),
+                          pressedColor: color.getColor(GramediaColor.white),
+                          disabledColor: color.getColor(GramediaColor.neutral50),
+                          focusedColor: color.getColor(GramediaColor.white),
+                          hoverColor: color.getColor(GramediaColor.white))
+                      .resolve({
+                      MaterialState.disabled,
+                      MaterialState.error,
+                      MaterialState.focused,
+                      MaterialState.pressed
+                    })
+                  : color.getColor(GramediaColor.neutral50),
+              filled: true,
+              disabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.transparent, width: 0.0), borderRadius: BorderRadius.circular(radius.radius(RadiusCase.radius_infinity))),
+              focusedErrorBorder: OutlineInputBorder(borderSide: BorderSide(color: color.getColor(GramediaColor.red500), width: 1.0), borderRadius: BorderRadius.circular(radius.radius(RadiusCase.radius_infinity))),
+              errorBorder: OutlineInputBorder(borderSide: BorderSide(color: color.getColor(GramediaColor.red500), width: 1.0), borderRadius: BorderRadius.circular(radius.radius(RadiusCase.radius_infinity))),
+              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: color.getColor(GramediaColor.neutral700), width: 2.0), borderRadius: BorderRadius.circular(radius.radius(RadiusCase.radius_infinity))),
+              enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: color.getColor(GramediaColor.neutral500), width: 1.0), borderRadius: BorderRadius.circular(radius.radius(RadiusCase.radius_infinity)))),
+          controller: widget.controller,
+          focusNode: widget.focusNode,
+          onChanged: widget.onChanged,
+          onTap: () {
+            widget.onTap;
+            setState(() {
+              colorStateValue = SearchFieldState.focus;
+            });
+          },
+          onSubmitted: widget.onSubmitted,
+        ),
       ),
     );
   }

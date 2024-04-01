@@ -12,9 +12,9 @@ enum RadiusCase {
   radius_infinity
 }
 
-extension on RadiusCase {
+extension MyRadiusCase on RadiusCase {
   double get value {
-    switch(this){
+    switch (this) {
       case RadiusCase.radius_2XS:
         return 4.0;
       case RadiusCase.radius_XS:
@@ -37,15 +37,15 @@ extension on RadiusCase {
         return 64.0;
       case RadiusCase.radius_infinity:
         return 1000.0;
-      default :
-      return 0.0;
+      default:
+        return 0.0;
     }
   }
 }
 
 class RadiusHelper {
-  double radius(RadiusCase type){
-    switch(type){
+  double radius(RadiusCase type) {
+    switch (type) {
       case RadiusCase.radius_2XS:
         return 4.0;
       case RadiusCase.radius_XS:
@@ -68,8 +68,8 @@ class RadiusHelper {
         return 64.0;
       case RadiusCase.radius_infinity:
         return 1000.0;
-      default :
-      return 0.0;
+      default:
+        return 0.0;
     }
   }
 }

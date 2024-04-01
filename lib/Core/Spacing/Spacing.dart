@@ -16,9 +16,9 @@ enum Spacing {
   spacing_15
 }
 
-extension on Spacing {
+extension MySpacing on Spacing {
   double get value {
-    switch(this){
+    switch (this) {
       case Spacing.spacing_1:
         return 4.0;
       case Spacing.spacing_2:
@@ -49,15 +49,15 @@ extension on Spacing {
         return 128.0;
       case Spacing.spacing_15:
         return 160.0;
-      default :
-      return 0.0;
+      default:
+        return 0.0;
     }
   }
 }
 
-class SpacingHelper{
+class SpacingHelper {
   double getvalue(Spacing spaceType) {
-    switch(spaceType){
+    switch (spaceType) {
       case Spacing.spacing_1:
         return 4.0;
       case Spacing.spacing_2:
@@ -88,8 +88,8 @@ class SpacingHelper{
         return 128.0;
       case Spacing.spacing_15:
         return 160.0;
-      default :
-      return 0.0;
+      default:
+        return 0.0;
     }
   }
 }

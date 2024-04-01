@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:papilus_component_gramedia/Core/Color/Color.dart';
+import 'package:papilus_component_gramedia/Core/Spacing/Spacing.dart';
 import 'package:papilus_component_gramedia/Core/Typography/Typography.dart';
 import 'package:papilus_component_gramedia/Text/GramediaText.dart';
 
@@ -14,7 +15,8 @@ class GramediaCategory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 4, right: 12),
+      constraints: const BoxConstraints(minWidth: 120),
+      padding: EdgeInsets.only(left: 4, right: 4),
       height: 48,
       decoration: BoxDecoration(
           border: Border.all(color: GramediaColor.neutral150.valueColor),
@@ -28,16 +30,19 @@ class GramediaCategory extends StatelessWidget {
                 shape: BoxShape.circle,
                 image: DecorationImage(image: image, fit: BoxFit.cover)),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            child: Container(
-              constraints: const BoxConstraints(minWidth: 60, maxWidth: 120),
-              child: GramediaText(
-                text,
-                fontStyle: UrbanistFont.mobile_text_2xs_medium,
-                color: color ?? GramediaColor.neutral500.valueColor,
-                textAlign: TextAlign.center,
-              ),
+          SizedBox(
+            width: Spacing.spacing_1.value,
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            constraints: const BoxConstraints(minWidth: 48, maxWidth: 120),
+            width: 56,
+            child: GramediaText(
+              text,
+              fontStyle: UrbanistFont.mobile_text_2xs_medium,
+              color: color ?? GramediaColor.neutral500.valueColor,
+              textAlign: TextAlign.center,
+              maxLines: 2,
             ),
           )
         ],

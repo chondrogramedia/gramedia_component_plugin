@@ -15,6 +15,7 @@ class HeaderBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
+      padding: EdgeInsets.only(top: Spacing.spacing_3.value),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [

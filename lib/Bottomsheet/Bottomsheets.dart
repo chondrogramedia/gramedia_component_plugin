@@ -3,6 +3,7 @@ import 'package:papilus_component_gramedia/Bottomsheet/HeadeBottomSheet.dart';
 import 'package:papilus_component_gramedia/Bottomsheet/MasterBottomSheet.dart';
 import 'package:papilus_component_gramedia/Bottomsheet/MasterContentBottomSheet.dart';
 import 'package:papilus_component_gramedia/Core/Radius/Radius.dart';
+import 'package:papilus_component_gramedia/Core/WidgetSize/WidgetSize.dart';
 import 'package:papilus_component_gramedia/GramediaComponent.dart';
 
 mixin Alert {
@@ -18,11 +19,15 @@ mixin Alert {
       {required String header,
       required Widget content,
       required String title,
-      required String message,required List<Widget> actions}) {
+      required String message,
+      required List<Widget> actions,
+      double? height}) {
     var radiusHelper = RadiusHelper();
     var mediaQuery = MediaQuery.of(context);
     showModalBottomSheet<void>(
+        useSafeArea: true,
         context: context,
+        isScrollControlled: true,
         constraints: BoxConstraints(
             maxWidth:
                 mediaQuery.size.width > 600 ? 600 : mediaQuery.size.width),
@@ -30,27 +35,20 @@ mixin Alert {
           borderRadius: BorderRadius.vertical(
               top: Radius.circular(radiusHelper.radius(RadiusCase.radius_L))),
         ),
-        isScrollControlled: true,
         builder: (context) {
-          return Container(
-            padding: EdgeInsets.only(top: 12),
-            height: 460,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                HeaderBottomSheet(
-                  title: header,
-                  onTapClose: () {
-                    Navigator.pop(context);
-                  },
-                ),
-                MasterContentBottomSheet(
-                    image: content,
-                    title: title,
-                    description: message),
-                MasterBottomSheet(children: actions,)
-              ],
-            ),
+          return Wrap(
+            children: [
+              HeaderBottomSheet(
+                title: header,
+                onTapClose: () {
+                  Navigator.pop(context);
+                },
+              ),
+              content,
+              MasterBottomSheet(
+                children: actions,
+              )
+            ],
           );
         });
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:papilus_component_gramedia/Core/Color/Color.dart';
 import 'package:papilus_component_gramedia/Core/WidgetSize/WidgetSize.dart';
@@ -10,16 +11,22 @@ class GramediaNavigationBar extends StatefulWidget {
   int count;
   BoxDecoration? decoration;
   EdgeInsets? padding;
+  EdgeInsets? margin;
+  double? height;
   Widget Function(BuildContext context, int index)? builder;
   Function(int index)? onTap;
   int currentIndex;
+  Color? color;
   GramediaNavigationBar(
       {required this.count,
+      this.height,
       this.decoration,
       this.padding,
       this.builder,
       this.onTap,
-      required this.currentIndex});
+      required this.currentIndex,
+      this.color,
+      this.margin});
 
   @override
   State<GramediaNavigationBar> createState() => _GramediaNavigationBarState();
@@ -42,9 +49,10 @@ class _GramediaNavigationBarState extends State<GramediaNavigationBar> {
   Widget build(BuildContext context) {
     var colorHelper = ColorHelper();
     return Container(
-      height: 64,
+      height: widget.height ?? 64,
       padding: widget.padding,
       decoration: widget.decoration,
+      margin: widget.margin,
       child: Stack(
         children: [
           Row(
@@ -90,8 +98,8 @@ class _GramediaNavigationBarState extends State<GramediaNavigationBar> {
                   border: Border(
                       top: BorderSide(
                           width: 3,
-                          color: colorHelper.getColor(GramediaColor.brand600))),
-                  color: Colors.green,
+                          color: widget.color ??
+                              GramediaColor.brand500.valueColor)),
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(12),
                       bottomRight: Radius.circular(12)),

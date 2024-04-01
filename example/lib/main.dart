@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'dart:async';
 import 'package:papilus_component_gramedia/Bottomsheet/Bottomsheets.dart';
 import 'package:flutter/services.dart';
@@ -29,6 +30,8 @@ import 'package:papilus_component_gramedia_example/Core/TextFieldView.dart';
 import 'package:papilus_component_gramedia_example/Core/TypographyView.dart';
 import 'package:papilus_component_gramedia_example/Core/WrapChipsView.dart';
 import 'package:papilus_component_gramedia_example/Custom/SegemntedCustomView.dart';
+import 'package:papilus_component_gramedia_example/Module/Search/Cubit/SearchCubit.dart';
+import 'package:papilus_component_gramedia_example/Module/TabBar/View/TabBarView.dart';
 import 'package:papilus_component_gramedia_example/View/TabBarCustomView.dart';
 
 void main() {
@@ -56,11 +59,14 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        localizationsDelegates: [DefaultMaterialLocalizations.delegate],
-        theme: ThemeData(useMaterial3: true),
-        home: TestingView());
+    return MultiBlocProvider(
+      providers: [BlocProvider(create: (_) => SearchCubit())],
+      child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          localizationsDelegates: [DefaultMaterialLocalizations.delegate],
+          theme: ThemeData(useMaterial3: true),
+          home: TabBarProductView()),
+    );
   }
 }
 
@@ -172,7 +178,7 @@ class _TestingViewState extends State<TestingView> with Alert, Navigation {
                     child: GramediaText(
                       TestingViewCase.values[index].name,
                       fontStyle: UrbanistFont.mobile_text_l_extrabold,
-                      color: Colors.white,
+                      color: GramediaColor.accent500.valueColor,
                     ))),
           ),
         ));
