@@ -10,28 +10,26 @@ import 'package:papilus_component_gramedia_example/Helper/DummyDataProduct.dart'
 import 'package:papilus_component_gramedia_example/Module/Search/Cubit/SearchCubit.dart';
 
 class SearchingView extends StatefulWidget {
-  const SearchingView({super.key});
-
+  final FocusNode? focusNode;
+  const SearchingView({super.key, this.focusNode});
   @override
   State<SearchingView> createState() => _SearchingViewState();
 }
 
-class _SearchingViewState extends State<SearchingView> with Alert {
+class _SearchingViewState extends State<SearchingView> with Alert, Navigation {
   late TextEditingController searchController;
-  late FocusNode focusNode;
   @override
   void initState() {
     // TODO: implement initState
-    focusNode = FocusNode();
-    focusNode.requestFocus();
+    widget.focusNode?.requestFocus();
     searchController = TextEditingController();
     super.initState();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
-    focusNode.dispose();
+    searchController.dispose();
+    widget.focusNode?.dispose();
     super.dispose();
   }
 
@@ -51,7 +49,7 @@ class _SearchingViewState extends State<SearchingView> with Alert {
                     children: [
                       IconButton(
                           onPressed: () {
-                            context.read<SearchCubit>().navigation(0);
+                            Navigator.pop(context);
                           },
                           icon: const Icon(FluentIcons.arrow_left_12_filled)),
                       const SizedBox(
@@ -59,13 +57,11 @@ class _SearchingViewState extends State<SearchingView> with Alert {
                       ),
                       Expanded(
                         flex: 9,
-                        child: Hero(
-                          tag: "Seaching",
-                          child: GramediaSearchField(
-                            focusNode: focusNode,
-                            hintText: "Cari Produk, Judul Buku atau Penulis",
-                            controller: searchController,
-                          ),
+                        child: GramediaSearchField(
+                          focusNode: widget.focusNode,
+                          hintText: "Cari Produk, Judul Buku atau Penulis",
+                          controller: searchController,
+                          onTap: () {},
                         ),
                       )
                     ],

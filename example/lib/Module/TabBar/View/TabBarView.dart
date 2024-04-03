@@ -109,20 +109,35 @@ class _TabBarProductViewState extends State<TabBarProductView> with Navigation {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
-                    currentIndexTab == index
-                        ? selectedIcons[index]
-                        : unSelectedIcons[index],
-                    color: currentIndexTab == index
-                        ? GramediaColor.brand500.valueColor
-                        : GramediaColor.neutral500.valueColor,
+                  ShaderMask(
+                    blendMode: BlendMode.srcIn,
+                    shaderCallback: (Rect bounds) => LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                      colors: currentIndexTab == index
+                          ? [
+                              GramediaColor.brand500.valueColor
+                                  .withOpacity(0.5),
+                              GramediaColor.brand500.valueColor.withOpacity(0)
+                            ]
+                          : [
+                              GramediaColor.neutral500.valueColor,
+                              GramediaColor.neutral500.valueColor,
+                            ], // Gradient colors for the icon
+                    ).createShader(bounds),
+                    child: Icon(
+                      currentIndexTab == index
+                          ? selectedIcons[index]
+                          : unSelectedIcons[index],
+                      color: currentIndexTab == index
+                          ? GramediaColor.brand500.valueColor
+                          : GramediaColor.neutral500.valueColor,
+                    ),
                   ),
                   GramediaText(
                     titleTab[index],
-                    fontStyle: UrbanistFont.mobile_text_2xs_extrabold,
-                    color: currentIndexTab == index
-                        ? GramediaColor.brand500.valueColor
-                        : GramediaColor.neutral500.valueColor,
+                    fontStyle: UrbanistFont.mobile_text_2xs_medium,
+                    color: GramediaColor.neutral500.valueColor,
                   )
                 ],
               );

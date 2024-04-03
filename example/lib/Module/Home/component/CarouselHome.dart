@@ -28,7 +28,7 @@ class CarouselHome extends StatelessWidget {
                   image: DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
-                          "https://ebooks.gramedia.com/ebook-statics/banners/kjuxbf4jo7gfkqlk2hc7gwz9arlz3e.png"))),
+                          "https://cdn.gramedia.com/uploads/marketing/Gramedia.com_Promo_Kembali_Belajar_Membaca_Bersama_KPG_-_April_2024_Storefront__wauto_h336.jpg"))),
             );
           },
           onPageChanged: onChanged,

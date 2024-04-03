@@ -26,7 +26,7 @@ class GramediaButton extends StatefulWidget {
   Color? foregroundDisabledColor;
   Color? foregroundFocusedColor;
   Color? foregroundHoverColor;
-
+  RadiusCase? radiusCase;
   GramediaButton(
       {super.key,
       this.icon,
@@ -43,7 +43,8 @@ class GramediaButton extends StatefulWidget {
       this.foregroundDisabledColor,
       this.foregroundFocusedColor,
       this.foregroundHoverColor,
-      this.foregroundPressedColor});
+      this.foregroundPressedColor,
+      this.radiusCase});
 
   @override
   State<GramediaButton> createState() => _GramediaButtonState();
@@ -692,6 +693,7 @@ class _GramediaButtonState extends State<GramediaButton> {
         backgroundFocusedColor: widget.backgroundFocusedColor,
         backgroundHoverColor: widget.backgroundHoverColor,
         backgroundPressedColor: widget.backgroundPressedColor,
-        icon: widget.icon);
+        icon: widget.icon,
+        radius: widget.radiusCase);
   }
 }

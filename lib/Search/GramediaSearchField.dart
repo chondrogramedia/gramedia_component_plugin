@@ -149,8 +149,9 @@ class _GramediaSearchFieldState extends State<GramediaSearchField> {
           controller: widget.controller,
           focusNode: widget.focusNode,
           onChanged: widget.onChanged,
+          onTapAlwaysCalled: true,
           onTap: () {
-            widget.onTap;
+            widget.onTap!;
             setState(() {
               colorStateValue = SearchFieldState.focus;
             });
