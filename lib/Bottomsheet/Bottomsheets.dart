@@ -53,6 +53,40 @@ mixin Alert {
         });
   }
 
+  void showModalBottomsheetWithoutButton(BuildContext context,
+      {required String header,
+      required Widget content,
+      required String title,
+      required String message,
+      double? height}) {
+    var radiusHelper = RadiusHelper();
+    var mediaQuery = MediaQuery.of(context);
+    showModalBottomSheet<void>(
+        useSafeArea: true,
+        context: context,
+        isScrollControlled: true,
+        constraints: BoxConstraints(
+            maxWidth:
+                mediaQuery.size.width > 600 ? 600 : mediaQuery.size.width),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+              top: Radius.circular(radiusHelper.radius(RadiusCase.radius_L))),
+        ),
+        builder: (context) {
+          return Wrap(
+            children: [
+              HeaderBottomSheet(
+                title: header,
+                onTapClose: () {
+                  Navigator.pop(context);
+                },
+              ),
+              content,
+            ],
+          );
+        });
+  }
+
   void showGramediaAlert(BuildContext context,
       {required String title, required String message}) {
     var scaffold = ScaffoldMessenger.of(context);
