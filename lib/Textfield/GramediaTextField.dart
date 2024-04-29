@@ -20,6 +20,8 @@ class GramediaTextField extends StatelessWidget {
   TextInputType? keyboardType;
   void Function(String)? onFieldSubmitted;
   void Function(String?)? onSaved;
+  void Function(String)? onChanged;
+
   List<TextInputFormatter>? inputFormatters;
   bool isObsecure;
   GramediaTextField(
@@ -37,7 +39,8 @@ class GramediaTextField extends StatelessWidget {
       this.onSaved,
       this.onFieldSubmitted,
       this.inputFormatters,
-      this.isObsecure = false});
+      this.isObsecure = false,
+      this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +56,7 @@ class GramediaTextField extends StatelessWidget {
       controller: controller,
       validator: validator,
       onSaved: onSaved,
+      onChanged: onChanged,
       inputFormatters: inputFormatters,
       onFieldSubmitted: onFieldSubmitted,
       style: typograpy.getValue(UrbanistFont.mobile_text_m_medium,
