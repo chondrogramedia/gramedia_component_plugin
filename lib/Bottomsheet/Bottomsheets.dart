@@ -67,8 +67,8 @@ mixin Alert {
         isScrollControlled: true,
         backgroundColor: GramediaColor.white.valueColor,
         constraints: BoxConstraints(
-            maxWidth:
-                mediaQuery.size.width > 600 ? 600 : mediaQuery.size.width),
+            maxWidth: mediaQuery.size.width > 600 ? 600 : mediaQuery.size.width,
+            maxHeight: mediaQuery.size.height * 0.75),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
               top: Radius.circular(radiusHelper.radius(RadiusCase.radius_L))),
@@ -76,12 +76,6 @@ mixin Alert {
         builder: (context) {
           return Wrap(
             children: [
-              HeaderBottomSheet(
-                title: header,
-                onTapClose: () {
-                  Navigator.pop(context);
-                },
-              ),
               content,
             ],
           );
