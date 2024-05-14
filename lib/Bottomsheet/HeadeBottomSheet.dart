@@ -16,6 +16,7 @@ class HeaderBottomSheet extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.only(top: Spacing.spacing_3.value),
+      color: GramediaColor.white.valueColor,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [

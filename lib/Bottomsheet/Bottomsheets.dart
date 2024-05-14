@@ -65,6 +65,7 @@ mixin Alert {
         useSafeArea: true,
         context: context,
         isScrollControlled: true,
+        backgroundColor: GramediaColor.white.valueColor,
         constraints: BoxConstraints(
             maxWidth:
                 mediaQuery.size.width > 600 ? 600 : mediaQuery.size.width),
