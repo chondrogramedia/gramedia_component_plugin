@@ -77,7 +77,7 @@ mixin Alert {
           return Wrap(
             children: [
               Container(
-                height: 24,
+                height: 40,
                 child: Center(
                   child: Container(
                     height: 16,
