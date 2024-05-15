@@ -76,6 +76,19 @@ mixin Alert {
         builder: (context) {
           return Wrap(
             children: [
+              Container(
+                height: 24,
+                child: Center(
+                  child: Container(
+                    height: 16,
+                    width: 72,
+                    decoration: BoxDecoration(
+                        color: GramediaColor.neutral600.valueColor,
+                        borderRadius: BorderRadius.circular(100),
+                        shape: BoxShape.rectangle),
+                  ),
+                ),
+              ),
               content,
             ],
           );
