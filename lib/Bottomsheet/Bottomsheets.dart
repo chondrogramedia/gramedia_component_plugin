@@ -80,7 +80,7 @@ mixin Alert {
                 height: 40,
                 child: Center(
                   child: Container(
-                    height: 16,
+                    height: 12,
                     width: 72,
                     decoration: BoxDecoration(
                         color: GramediaColor.neutral600.valueColor,
