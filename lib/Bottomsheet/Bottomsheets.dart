@@ -79,8 +79,13 @@ mixin Alert {
             children: [
               Container(
                 padding: const EdgeInsets.only(top: 8, bottom: 20),
-                decoration:
-                    BoxDecoration(color: GramediaColor.white.valueColor),
+                decoration: BoxDecoration(
+                  color: GramediaColor.white.valueColor,
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(
+                        radiusHelper.radius(RadiusCase.radius_L)),
+                  ),
+                ),
                 child: Center(
                   child: Container(
                     height: 4,

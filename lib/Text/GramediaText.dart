@@ -13,7 +13,7 @@ class GramediaText extends StatelessWidget {
       this.color,
       this.isUndlerlined = false,
       this.textAlign = TextAlign.center,
-      this.maxLines = 0});
+      this.maxLines = 3});
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +23,7 @@ class GramediaText extends StatelessWidget {
           .getValue(fontStyle, color ?? Colors.black, isUndlerlined),
       textAlign: textAlign,
       overflow: TextOverflow.ellipsis,
+      maxLines: maxLines,
     );
   }
 }
