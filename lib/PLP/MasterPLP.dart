@@ -71,12 +71,14 @@ class MasterPLPCard extends StatelessWidget {
                       fontStyle: UrbanistFont.mobile_text_2xs_medium,
                       color: GramediaColor.neutral500.valueColor,
                       textAlign: TextAlign.justify,
+                      maxLines: 1,
                     ),
                     GramediaText(
                       title,
                       fontStyle: UrbanistFont.mobile_text_xs_medium,
                       color: GramediaColor.neutral700.valueColor,
                       textAlign: TextAlign.justify,
+                      maxLines: 2,
                     ),
                     SizedBox(
                       height: Spacing.spacing_1.value,
@@ -96,6 +98,7 @@ class MasterPLPCard extends StatelessWidget {
                           fontStyle: UrbanistFont.mobile_text_2xs_medium,
                           color: GramediaColor.neutral500.valueColor,
                           textAlign: TextAlign.justify,
+                          maxLines: 1,
                         ),
                       ],
                     )

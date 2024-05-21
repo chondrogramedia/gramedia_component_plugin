@@ -13,7 +13,7 @@ class GramediaText extends StatelessWidget {
       this.color,
       this.isUndlerlined = false,
       this.textAlign = TextAlign.center,
-      this.maxLines = 3});
+      this.maxLines = 1});
 
   @override
   Widget build(BuildContext context) {
