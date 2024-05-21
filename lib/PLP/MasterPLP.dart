@@ -70,14 +70,14 @@ class MasterPLPCard extends StatelessWidget {
                       author,
                       fontStyle: UrbanistFont.mobile_text_2xs_medium,
                       color: GramediaColor.neutral500.valueColor,
-                      textAlign: TextAlign.justify,
+                      textAlign: TextAlign.left,
                       maxLines: 1,
                     ),
                     GramediaText(
                       title,
                       fontStyle: UrbanistFont.mobile_text_xs_medium,
                       color: GramediaColor.neutral700.valueColor,
-                      textAlign: TextAlign.justify,
+                      textAlign: TextAlign.left,
                       maxLines: 2,
                     ),
                     SizedBox(
