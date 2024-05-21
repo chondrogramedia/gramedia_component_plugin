@@ -67,7 +67,7 @@ extension MyColorExtension on GramediaColor {
       case GramediaColor.yellow50:
         return Color(0xffFEF4D3);
       case GramediaColor.yellow500:
-        return Color(0xffC99E1B);
+        return Color(0xffE9B926);
       case GramediaColor.yellow600:
         return Color(0xff977714);
       case GramediaColor.yellow700:

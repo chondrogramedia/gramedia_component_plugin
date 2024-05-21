@@ -64,6 +64,7 @@ mixin Alert {
     showModalBottomSheet<void>(
         useSafeArea: true,
         context: context,
+        enableDrag: true,
         isScrollControlled: true,
         backgroundColor: GramediaColor.white.valueColor,
         constraints: BoxConstraints(
@@ -77,14 +78,17 @@ mixin Alert {
           return Wrap(
             children: [
               Container(
-                height: 40,
+                padding: const EdgeInsets.only(top: 8, bottom: 20),
+                decoration:
+                    BoxDecoration(color: GramediaColor.white.valueColor),
                 child: Center(
                   child: Container(
-                    height: 12,
-                    width: 72,
+                    height: 4,
+                    width: 32,
                     decoration: BoxDecoration(
-                        color: GramediaColor.neutral600.valueColor,
-                        borderRadius: BorderRadius.circular(100),
+                        color: GramediaColor.neutral200.valueColor,
+                        borderRadius: BorderRadius.circular(
+                            RadiusCase.radius_infinity.value),
                         shape: BoxShape.rectangle),
                   ),
                 ),
