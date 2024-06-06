@@ -20,6 +20,8 @@ class MasterPLPCard extends StatelessWidget {
   PLPType? type;
   String? duration;
   double? progress;
+  double? score;
+  String? date;
   MasterPLPCard(
       {super.key,
       required this.imageUrl,
@@ -31,7 +33,9 @@ class MasterPLPCard extends StatelessWidget {
       this.onTap,
       this.type = PLPType.baseCard,
       this.duration,
-      this.progress});
+      this.progress,
+      this.score,
+      this.date});
 
   Widget card(PLPType valueType) {
     switch (valueType) {
@@ -94,14 +98,24 @@ class MasterPLPCard extends StatelessWidget {
                           width: Spacing.spacing_1.value,
                         ),
                         GramediaText(
-                          "5.0",
+                          "${score ?? 0.0}",
                           fontStyle: UrbanistFont.mobile_text_2xs_medium,
                           color: GramediaColor.neutral500.valueColor,
                           textAlign: TextAlign.justify,
                           maxLines: 1,
                         ),
                       ],
-                    )
+                    ),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    date != null
+                        ? GramediaLabelWidget(
+                            message: date ?? "",
+                            foregroundColor: GramediaColor.brand500.valueColor,
+                            backgroundColor: GramediaColor.brand200.valueColor,
+                          )
+                        : const SizedBox.shrink()
                   ],
                 ),
                 onTap == null
