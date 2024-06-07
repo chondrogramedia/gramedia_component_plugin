@@ -96,6 +96,18 @@ class PLPHorizontalCard extends StatelessWidget {
                                 icon: Icon(FluentIcons.heart_16_regular))
                           ],
                         ),
+                        SizedBox(
+                          height: Spacing.spacing_3.value,
+                        ),
+                        date != null
+                            ? GramediaLabelWidget(
+                                message: date ?? "",
+                                foregroundColor:
+                                    GramediaColor.brand500.valueColor,
+                                backgroundColor:
+                                    GramediaColor.brand200.valueColor,
+                              )
+                            : const SizedBox.shrink(),
                       ]),
                 ),
               )
@@ -104,13 +116,6 @@ class PLPHorizontalCard extends StatelessWidget {
           SizedBox(
             height: Spacing.spacing_6.value,
           ),
-          date != null
-              ? GramediaLabelWidget(
-                  message: date ?? "",
-                  foregroundColor: GramediaColor.brand500.valueColor,
-                  backgroundColor: GramediaColor.brand200.valueColor,
-                )
-              : const SizedBox.shrink(),
           const Divider()
         ],
       ),
