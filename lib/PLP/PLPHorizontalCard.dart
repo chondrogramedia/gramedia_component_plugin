@@ -39,8 +39,8 @@ class PLPHorizontalCard extends StatelessWidget {
                       "assets/image-2.png",
                       package: "papilus_component_gramedia",
                       fit: BoxFit.fitWidth,
-                      height: 160,
-                      width: 120,
+                      height: 120,
+                      width: 90,
                     );
                   },
                   height: 160,
@@ -87,18 +87,6 @@ class PLPHorizontalCard extends StatelessWidget {
                         SizedBox(
                           height: Spacing.spacing_3.value,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Spacer(),
-                            IconButton(
-                                onPressed: () {},
-                                icon: Icon(FluentIcons.heart_16_regular))
-                          ],
-                        ),
-                        SizedBox(
-                          height: Spacing.spacing_3.value,
-                        ),
                         date != null
                             ? GramediaLabelWidget(
                                 message: date ?? "",
@@ -108,6 +96,18 @@ class PLPHorizontalCard extends StatelessWidget {
                                     GramediaColor.brand200.valueColor,
                               )
                             : const SizedBox.shrink(),
+                        SizedBox(
+                          height: Spacing.spacing_3.value,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Spacer(),
+                            IconButton(
+                                onPressed: () {},
+                                icon: Icon(FluentIcons.heart_16_regular))
+                          ],
+                        ),
                       ]),
                 ),
               )
