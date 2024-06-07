@@ -109,13 +109,13 @@ class MasterPLPCard extends StatelessWidget {
                     const SizedBox(
                       height: 12,
                     ),
-                    date != null
-                        ? GramediaLabelWidget(
-                            message: date ?? "",
-                            foregroundColor: GramediaColor.brand500.valueColor,
-                            backgroundColor: GramediaColor.brand200.valueColor,
-                          )
-                        : const SizedBox.shrink()
+                    // date != null
+                    //     ? GramediaLabelWidget(
+                    //         message: date ?? "",
+                    //         foregroundColor: GramediaColor.brand500.valueColor,
+                    //         backgroundColor: GramediaColor.brand200.valueColor,
+                    //       )
+                    //     : const SizedBox.shrink()
                   ],
                 ),
                 onTap == null
@@ -156,6 +156,8 @@ class MasterPLPCard extends StatelessWidget {
           title: title,
           duration: duration,
           progress: progress,
+          onTap: onTap,
+          onFavorited: onFavorited,
         );
       case PLPType.horizontalCard:
         return PLPHorizontalCard(
@@ -163,6 +165,7 @@ class MasterPLPCard extends StatelessWidget {
           title: title,
           author: author,
           borrowedDate: duration,
+          date: date,
         );
     }
   }

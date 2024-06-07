@@ -11,12 +11,14 @@ class PLPHorizontalCard extends StatelessWidget {
   final String? borrowedDate;
   final String? title;
   final String? author;
+  final String? date;
   const PLPHorizontalCard(
       {super.key,
       required this.imageUrl,
       this.borrowedDate,
       this.author,
-      this.title});
+      this.title,
+      this.date});
 
   @override
   Widget build(BuildContext context) {
@@ -102,6 +104,13 @@ class PLPHorizontalCard extends StatelessWidget {
           SizedBox(
             height: Spacing.spacing_6.value,
           ),
+          date != null
+              ? GramediaLabelWidget(
+                  message: date ?? "",
+                  foregroundColor: GramediaColor.brand500.valueColor,
+                  backgroundColor: GramediaColor.brand200.valueColor,
+                )
+              : const SizedBox.shrink(),
           const Divider()
         ],
       ),
