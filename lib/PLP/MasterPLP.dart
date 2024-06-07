@@ -106,9 +106,7 @@ class MasterPLPCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 12,
-                    ),
+
                     // date != null
                     //     ? GramediaLabelWidget(
                     //         message: date ?? "",
