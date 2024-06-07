@@ -30,23 +30,20 @@ class PLPHorizontalCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              Expanded(
-                flex: 3,
-                child: Image.network(
-                  imageUrl,
-                  errorBuilder: (context, error, stackTrace) {
-                    return Image.asset(
-                      "assets/image-2.png",
-                      package: "papilus_component_gramedia",
-                      fit: BoxFit.fitWidth,
-                      height: 120,
-                      width: 90,
-                    );
-                  },
-                  height: 160,
-                  width: 120,
-                  fit: BoxFit.fitWidth,
-                ),
+              Image.network(
+                imageUrl,
+                errorBuilder: (context, error, stackTrace) {
+                  return Image.asset(
+                    "assets/image-2.png",
+                    package: "papilus_component_gramedia",
+                    fit: BoxFit.fitHeight,
+                    height: 120,
+                    width: 90,
+                  );
+                },
+                height: 160,
+                width: 120,
+                fit: BoxFit.fitHeight,
               ),
               SizedBox(
                 width: Spacing.spacing_6.value,
