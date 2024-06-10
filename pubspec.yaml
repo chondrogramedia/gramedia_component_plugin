@@ -63,6 +63,7 @@ flutter:
     - assets/icons/heart_outlined/
     - assets/information_image/empty_product/
     - assets/information_image/failed_transaction/
+    - assets/information_image/empty_collection/
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
