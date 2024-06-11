@@ -90,7 +90,7 @@ class PLPHorizontalCard extends StatelessWidget {
                                 foregroundColor:
                                     GramediaColor.brand500.valueColor,
                                 backgroundColor:
-                                    GramediaColor.brand200.valueColor,
+                                    GramediaColor.brand50.valueColor,
                               )
                             : const SizedBox.shrink(),
                         SizedBox(
