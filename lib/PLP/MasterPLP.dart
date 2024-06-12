@@ -159,6 +159,7 @@ class MasterPLPCard extends StatelessWidget {
         );
       case PLPType.horizontalCard:
         return PLPHorizontalCard(
+          onPressed: onTap,
           imageUrl: imageUrl,
           title: title,
           author: author,
