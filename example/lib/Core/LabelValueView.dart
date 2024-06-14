@@ -15,9 +15,10 @@ class _LabelValueViewState extends State<LabelValueView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: GramediaLabel(
-          value: "Chondro",
-          icon: FluentIcons.person_16_filled,
+        child: GramediaLabelWidget(
+          message: "Mantap",
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.white,
         ),
       ),
     );

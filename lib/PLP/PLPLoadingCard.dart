@@ -47,14 +47,14 @@ class PLPLoadingCard extends StatelessWidget {
                     return Image.asset(
                       "assets/image-2.png",
                       package: "papilus_component_gramedia",
-                      fit: BoxFit.fitWidth,
+                      fit: BoxFit.fitHeight,
                       height: 160,
                       width: 120,
                     );
                   },
                   height: 160,
                   width: 120,
-                  fit: BoxFit.fitWidth,
+                  fit: BoxFit.fitHeight,
                 ),
                 SizedBox(
                   height: Spacing.spacing_2.value,

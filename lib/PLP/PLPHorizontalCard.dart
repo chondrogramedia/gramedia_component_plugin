@@ -40,7 +40,7 @@ class PLPHorizontalCard extends StatelessWidget {
                     return Image.asset(
                       "assets/image-2.png",
                       package: "papilus_component_gramedia",
-                      fit: BoxFit.fitHeight,
+                      fit: BoxFit.contain,
                       height: 120,
                       width: 90,
                     );
