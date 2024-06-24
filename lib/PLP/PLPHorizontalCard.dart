@@ -45,8 +45,8 @@ class PLPHorizontalCard extends StatelessWidget {
                       width: 90,
                     );
                   },
-                  height: 160,
-                  width: 120,
+                  height: 120,
+                  width: 90,
                   fit: BoxFit.fitHeight,
                 ),
                 SizedBox(
@@ -60,10 +60,16 @@ class PLPHorizontalCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          GramediaText(author ?? "",
-                              fontStyle: UrbanistFont.mobile_text_2xs_medium),
-                          GramediaText(title ?? "",
-                              fontStyle: UrbanistFont.mobile_text_xs_extrabold),
+                          GramediaText(
+                            author ?? "",
+                            fontStyle: UrbanistFont.mobile_text_2xs_medium,
+                            color: GramediaColor.neutral500.valueColor,
+                          ),
+                          GramediaText(
+                            title ?? "",
+                            fontStyle: UrbanistFont.mobile_text_xs_extrabold,
+                            color: GramediaColor.neutral700.valueColor,
+                          ),
                           SizedBox(
                             height: Spacing.spacing_2.value,
                           ),
