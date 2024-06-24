@@ -121,7 +121,7 @@ class PLPHorizontalCard extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: Spacing.spacing_6.value,
+              height: Spacing.spacing_4.value,
             ),
             const Divider()
           ],
