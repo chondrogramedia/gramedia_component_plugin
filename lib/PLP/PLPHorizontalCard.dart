@@ -113,8 +113,8 @@ class PLPHorizontalCard extends StatelessWidget {
                               const Spacer(),
                               IconButton(
                                 onPressed: () {},
-                                icon: Icon(FluentIcons.heart_12_regular),
-                                iconSize: 12,
+                                icon: Icon(FluentIcons.heart_16_regular),
+                                iconSize: 16,
                               )
                             ],
                           ),
