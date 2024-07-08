@@ -101,7 +101,9 @@ class PLPHorizontalCard extends StatelessWidget {
                                   backgroundColor:
                                       GramediaColor.brand50.valueColor,
                                 )
-                              : const SizedBox.shrink(),
+                              : const SizedBox(
+                                  height: 0,
+                                ),
                           SizedBox(
                             height: Spacing.spacing_2.value,
                           ),
@@ -110,8 +112,10 @@ class PLPHorizontalCard extends StatelessWidget {
                             children: [
                               const Spacer(),
                               IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(FluentIcons.heart_16_regular))
+                                onPressed: () {},
+                                icon: Icon(FluentIcons.heart_12_regular),
+                                iconSize: 12,
+                              )
                             ],
                           ),
                         ]),
