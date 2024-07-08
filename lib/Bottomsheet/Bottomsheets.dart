@@ -146,6 +146,7 @@ mixin Alert {
           fontStyle: UrbanistFont.mobile_text_s_medium,
           textAlign: TextAlign.start,
           color: Colors.white,
+          maxLines: 3,
         ),
         action: action);
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
