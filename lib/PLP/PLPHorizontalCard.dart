@@ -40,11 +40,11 @@ class PLPHorizontalCard extends StatelessWidget {
                       "assets/image-2.png",
                       package: "papilus_component_gramedia",
                       fit: BoxFit.fitHeight,
-                      height: 120,
+                      height: 140,
                       width: 90,
                     );
                   },
-                  height: 120,
+                  height: 140,
                   width: 90,
                   fit: BoxFit.fitHeight,
                 ),
@@ -54,7 +54,7 @@ class PLPHorizontalCard extends StatelessWidget {
                 Expanded(
                   flex: 7,
                   child: SizedBox(
-                    height: 120,
+                    height: 140,
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -114,7 +114,7 @@ class PLPHorizontalCard extends StatelessWidget {
                               IconButton(
                                 onPressed: () {},
                                 icon: Icon(FluentIcons.heart_16_regular),
-                                iconSize: 12,
+                                iconSize: 16,
                               )
                             ],
                           ),
