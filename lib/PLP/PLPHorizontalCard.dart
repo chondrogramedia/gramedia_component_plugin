@@ -114,7 +114,7 @@ class PLPHorizontalCard extends StatelessWidget {
                               IconButton(
                                 onPressed: () {},
                                 icon: Icon(FluentIcons.heart_16_regular),
-                                iconSize: 16,
+                                iconSize: 12,
                               )
                             ],
                           ),
