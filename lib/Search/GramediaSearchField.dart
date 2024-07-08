@@ -91,6 +91,7 @@ class _GramediaSearchFieldState extends State<GramediaSearchField> {
     return SizedBox(
       height: 48,
       child: Material(
+        color: Colors.white,
         child: TextField(
           enabled: widget.isEnabled,
           decoration: InputDecoration(
