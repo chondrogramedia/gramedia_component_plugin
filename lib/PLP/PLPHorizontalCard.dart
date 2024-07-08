@@ -30,7 +30,6 @@ class PLPHorizontalCard extends StatelessWidget {
         padding: EdgeInsets.only(left: 16, right: 16, top: 8),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Row(
               children: [
@@ -119,9 +118,6 @@ class PLPHorizontalCard extends StatelessWidget {
                   ),
                 )
               ],
-            ),
-            SizedBox(
-              height: Spacing.spacing_4.value,
             ),
             const Divider()
           ],
