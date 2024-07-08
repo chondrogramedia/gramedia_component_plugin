@@ -91,7 +91,7 @@ class PLPHorizontalCard extends StatelessWidget {
                             ],
                           ),
                           SizedBox(
-                            height: Spacing.spacing_3.value,
+                            height: Spacing.spacing_2.value,
                           ),
                           date != null
                               ? GramediaLabelWidget(
@@ -103,7 +103,7 @@ class PLPHorizontalCard extends StatelessWidget {
                                 )
                               : const SizedBox.shrink(),
                           SizedBox(
-                            height: Spacing.spacing_3.value,
+                            height: Spacing.spacing_2.value,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
