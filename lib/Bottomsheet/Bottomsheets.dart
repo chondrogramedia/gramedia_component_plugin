@@ -53,15 +53,15 @@ mixin Alert {
         });
   }
 
-  void showModalBottomsheetWithoutButton(BuildContext context,
+  Future<void> showModalBottomsheetWithoutButton(BuildContext context,
       {required String header,
       required Widget content,
       required String title,
       required String message,
-      double? height}) {
+      double? height}) async {
     var radiusHelper = RadiusHelper();
     var mediaQuery = MediaQuery.of(context);
-    showModalBottomSheet<void>(
+    return await showModalBottomSheet(
         useSafeArea: true,
         context: context,
         enableDrag: true,
