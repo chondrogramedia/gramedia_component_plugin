@@ -54,11 +54,7 @@ mixin Alert {
   }
 
   Future<void> showModalBottomsheetWithoutButton(BuildContext context,
-      {required String header,
-      required Widget content,
-      required String title,
-      required String message,
-      double? height}) async {
+      {required Widget content, double? height}) async {
     var radiusHelper = RadiusHelper();
     var mediaQuery = MediaQuery.of(context);
     return await showModalBottomSheet(
