@@ -46,6 +46,23 @@ class _GramediaNavigationBarState extends State<GramediaNavigationBar> {
   }
 
   @override
+  void didUpdateWidget(covariant GramediaNavigationBar oldWidget) {
+    // TODO: implement didUpdateWidget
+    super.didUpdateWidget(oldWidget);
+    if (widget.currentIndex != oldWidget.currentIndex) {
+      setState(() {
+        isDelayed = true;
+      });
+      Future.delayed(Duration(milliseconds: 200)).then((value) {
+        setState(() {
+          isDelayed = !isDelayed;
+          valueIndex = widget.currentIndex;
+        });
+      });
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     var colorHelper = ColorHelper();
     return Container(
