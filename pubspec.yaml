@@ -64,6 +64,7 @@ flutter:
     - assets/information_image/empty_product/
     - assets/information_image/failed_transaction/
     - assets/information_image/empty_collection/
+    - assets/information_image/empty_borrow_history/
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

@@ -21,17 +21,17 @@ class _BottomSheetViewState extends State<BottomSheetView> with Alert {
           children: [
             ElevatedButton(
               onPressed: () {
-                showModalBottomsheetWithoutButton(
-                  context,
-                  header: "Error",
-                  title: "Failed Login",
-                  message: "Please check your email / password",
-                  content: Image.asset(
-                    "assets/Image.png",
-                    width: 200,
-                    height: 200,
-                  ),
-                );
+                // showModalBottomsheetWithoutButton(
+                //   context,
+                //   header: "Error",
+                //   title: "Failed Login",
+                //   message: "Please check your email / password",
+                //   content: Image.asset(
+                //     "assets/Image.png",
+                //     width: 200,
+                //     height: 200,
+                //   ),
+                // );
               },
               child: GramediaText(
                 "Show Bottomsheet",
