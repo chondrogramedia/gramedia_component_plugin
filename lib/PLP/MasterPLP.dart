@@ -40,110 +40,113 @@ class MasterPLPCard extends StatelessWidget {
   Widget card(PLPType valueType) {
     switch (valueType) {
       case PLPType.baseCard:
-        return GestureDetector(
-          onTap: onTap,
-          child: Container(
-            padding: const EdgeInsets.all(8.0),
-            decoration: decoration,
-            width: 136,
-            height: 250,
-            child: Stack(
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Image.network(
-                      imageUrl,
-                      errorBuilder: (context, error, stackTrace) {
-                        return Image.asset(
-                          "assets/image-2.png",
-                          package: "papilus_component_gramedia",
-                          fit: BoxFit.scaleDown,
-                          height: 160,
-                          width: 120,
-                        );
-                      },
-                      height: 160,
-                      width: 120,
-                      fit: BoxFit.fitHeight,
-                    ),
-                    SizedBox(
-                      height: Spacing.spacing_2.value,
-                    ),
-                    GramediaText(
-                      author,
-                      fontStyle: UrbanistFont.mobile_text_2xs_medium,
-                      color: GramediaColor.neutral500.valueColor,
-                      textAlign: TextAlign.left,
-                      maxLines: 1,
-                    ),
-                    GramediaText(
-                      title,
-                      fontStyle: UrbanistFont.mobile_text_xs_medium,
-                      color: GramediaColor.neutral700.valueColor,
-                      textAlign: TextAlign.left,
-                      maxLines: 2,
-                    ),
-                    SizedBox(
-                      height: Spacing.spacing_1.value,
-                    ),
-                    Row(
-                      children: [
-                        Icon(
-                          FluentIcons.star_16_filled,
-                          color: GramediaColor.yellow500.valueColor,
-                          size: 16,
-                        ),
-                        SizedBox(
-                          width: Spacing.spacing_1.value,
-                        ),
-                        GramediaText(
-                          "${score ?? 0.0}",
-                          fontStyle: UrbanistFont.mobile_text_2xs_medium,
-                          color: GramediaColor.neutral500.valueColor,
-                          textAlign: TextAlign.justify,
-                          maxLines: 1,
-                        ),
-                      ],
-                    ),
-
-                    // date != null
-                    //     ? GramediaLabelWidget(
-                    //         message: date ?? "",
-                    //         foregroundColor: GramediaColor.brand500.valueColor,
-                    //         backgroundColor: GramediaColor.brand200.valueColor,
-                    //       )
-                    //     : const SizedBox.shrink()
-                  ],
-                ),
-                onTap == null
-                    ? Container(
-                        color: GramediaColor.white.valueColor.withOpacity(0.4),
-                      )
-                    : const SizedBox(),
-                Positioned(
-                    top: 0,
-                    right: 0,
-                    child: IconButton(
-                        onPressed: () {
-                          onFavorited!(!isFavorited!);
+        return Material(
+          child: InkWell(
+            onTap: onTap,
+            child: Container(
+              padding: const EdgeInsets.all(8.0),
+              decoration: decoration,
+              width: 136,
+              height: 250,
+              child: Stack(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Image.network(
+                        imageUrl,
+                        errorBuilder: (context, error, stackTrace) {
+                          return Image.asset(
+                            "assets/image-2.png",
+                            package: "papilus_component_gramedia",
+                            fit: BoxFit.scaleDown,
+                            height: 160,
+                            width: 120,
+                          );
                         },
-                        icon: Stack(
-                          alignment: Alignment.center,
-                          children: [
-                            Icon(
-                              FluentIcons.heart_16_filled,
-                              color: GramediaColor.neutral500.valueColor,
-                            ),
-                            Icon(
-                              isFavorited == true
-                                  ? FluentIcons.heart_16_filled
-                                  : FluentIcons.heart_16_regular,
-                              color: GramediaColor.red500.valueColor,
-                            ),
-                          ],
-                        )))
-              ],
+                        height: 160,
+                        width: 120,
+                        fit: BoxFit.fitHeight,
+                      ),
+                      SizedBox(
+                        height: Spacing.spacing_2.value,
+                      ),
+                      GramediaText(
+                        author,
+                        fontStyle: UrbanistFont.mobile_text_2xs_medium,
+                        color: GramediaColor.neutral500.valueColor,
+                        textAlign: TextAlign.left,
+                        maxLines: 1,
+                      ),
+                      GramediaText(
+                        title,
+                        fontStyle: UrbanistFont.mobile_text_xs_medium,
+                        color: GramediaColor.neutral700.valueColor,
+                        textAlign: TextAlign.left,
+                        maxLines: 2,
+                      ),
+                      SizedBox(
+                        height: Spacing.spacing_1.value,
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            FluentIcons.star_16_filled,
+                            color: GramediaColor.yellow500.valueColor,
+                            size: 16,
+                          ),
+                          SizedBox(
+                            width: Spacing.spacing_1.value,
+                          ),
+                          GramediaText(
+                            "${score ?? 0.0}",
+                            fontStyle: UrbanistFont.mobile_text_2xs_medium,
+                            color: GramediaColor.neutral500.valueColor,
+                            textAlign: TextAlign.justify,
+                            maxLines: 1,
+                          ),
+                        ],
+                      ),
+
+                      // date != null
+                      //     ? GramediaLabelWidget(
+                      //         message: date ?? "",
+                      //         foregroundColor: GramediaColor.brand500.valueColor,
+                      //         backgroundColor: GramediaColor.brand200.valueColor,
+                      //       )
+                      //     : const SizedBox.shrink()
+                    ],
+                  ),
+                  onTap == null
+                      ? Container(
+                          color:
+                              GramediaColor.white.valueColor.withOpacity(0.4),
+                        )
+                      : const SizedBox(),
+                  Positioned(
+                      top: 0,
+                      right: 0,
+                      child: IconButton(
+                          onPressed: () {
+                            onFavorited!(!isFavorited!);
+                          },
+                          icon: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Icon(
+                                FluentIcons.heart_16_filled,
+                                color: GramediaColor.neutral500.valueColor,
+                              ),
+                              Icon(
+                                isFavorited == true
+                                    ? FluentIcons.heart_16_filled
+                                    : FluentIcons.heart_16_regular,
+                                color: GramediaColor.red500.valueColor,
+                              ),
+                            ],
+                          )))
+                ],
+              ),
             ),
           ),
         );
