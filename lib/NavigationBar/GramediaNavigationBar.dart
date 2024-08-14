@@ -84,6 +84,9 @@ class _GramediaNavigationBarState extends State<GramediaNavigationBar> {
                       },
                       child: Expanded(
                         child: TextButton(
+                          style: TextButton.styleFrom(
+                              shadowColor: Colors.white,
+                              shape: RoundedRectangleBorder()),
                           onPressed: () async {
                             widget.onTap!(index);
                             setState(() {
